@@ -8,6 +8,8 @@ El Wireframe se ha realizado con Excalidraw.
 
 ## Paleta de Colores
 
+Paleta completa
+
 [![COOLORS](https://img.shields.io/badge/coolors-%234285F4.svg?style=for-the-badge)](https://coolors.co/151515-c2c2c2-f1f1f1-3da6fc-21cc78-f7fb39-ff2853)
 
 - Colores de la web
@@ -21,8 +23,8 @@ El Wireframe se ha realizado con Excalidraw.
 ## Tipografía
 
 1. Poppins
-   1. (Categorías,Títulos, Botones, Nombres de usuario,)
+   - (Categorías,Títulos, Botones, Nombres de usuario,)
 2. Roboto
-   1. (Descripciones, Textos, Comentarios)
+   - (Descripciones, Textos, Comentarios)
 
 ## Justificación de decisiones de diseño
