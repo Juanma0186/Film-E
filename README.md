@@ -37,7 +37,7 @@ Paleta completa
 - Wireframe
 
   - Se ha elegido un diseño sencillo y minimalista para que el usuario se centre en la información que le interesa, que son los contenidos audiovisuales y sus valoraciones, además de una interfaz basada en cajas que contendrán las listas creadas por el usuario, las cuales tendrán un título, descripción(opcional) y un icono que las identifique, junto con el número de elementos que contengan.
-  - <img src="/Film-E_user.jpg" alt="Server Apache2" width="400" height="auto" style="border-radius:8px">
+    <img src="/Film-E_user.jpg" alt="Boceto_Filme" width="400" height="auto">
 
 - Paleta de colores
 
@@ -46,5 +46,5 @@ Paleta completa
 
 - Fuentes
 
-  - El uso de **Poppins** en los títulos y botones es para que destaquen sobre el resto de la web, ya que son elementos importantes en la interfaz.
-  - Se ha elegido **Roboto** como fuente para los textos y descripciones ya que es legible y no cansa la vista al usuario en caso de que tenga que leer largos comentarios o descripciones más largas.
+  - El uso de **_Poppins_** en los títulos y botones es para que destaquen sobre el resto de la web, ya que son elementos importantes en la interfaz.
+  - Se ha elegido **_Roboto_** como fuente para los textos y descripciones ya que es legible y no cansa la vista al usuario en caso de que tenga que leer largos comentarios o descripciones más largas.
