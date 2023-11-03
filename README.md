@@ -36,7 +36,7 @@ Paleta completa
 
 - Wireframe
 
-  - Se ha elegido un diseño sencillo y minimalista para que el usuario se centre en la información que le interesa, que son los contenidos audiovisuales y sus valoraciones, además de una interfaz basada en cajas que contendrán las listas creadas por el usuario, las cuales tendrán un título, descripción(opcional) y un icono que las identifique, junto con el número de elementos que contengan.
+  - Se ha elegido un diseño sencillo y minimalista para que el usuario se centre en la información que le interesa, que son los contenidos audiovisuales y sus valoraciones, además de una interfaz personalizada basada en cajas que contendrán las listas creadas por el usuario, las cuales tendrán un título, descripción(opcional) y un icono que las identifique, junto con el número de elementos que contengan.
     <img src="/Film-E_user.jpg" alt="Boceto_Filme" width="400" height="auto">
 
 - Paleta de colores
