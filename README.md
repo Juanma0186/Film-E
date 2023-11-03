@@ -18,7 +18,7 @@ Paleta completa
 
 - Colores de las valoraciones
 
-  [![#21CC78](https://img.shields.io/badge/%2321CC78-21CC78?style=for-the-badge)](https://www.color-hex.com/color/21CC78)[![#FF2853](https://img.shields.io/badge/%23FF2853-FF2853?style=for-the-badge)](https://www.color-hex.com/color/FF2853)[![#F7FB39](https://img.shields.io/badge/%23F7FB39-F7FB39?style=for-the-badge)](https://www.color-hex.com/color/F7FB39)
+  [![#21CC78](https://img.shields.io/badge/%2321CC78-21CC78?style=for-the-badge)](https://www.color-hex.com/color/21CC78)[![#F7FB39](https://img.shields.io/badge/%23F7FB39-F7FB39?style=for-the-badge)](https://www.color-hex.com/color/F7FB39)[![#FF2853](https://img.shields.io/badge/%23FF2853-FF2853?style=for-the-badge)](https://www.color-hex.com/color/FF2853)
 
 ## Tipografía
 
