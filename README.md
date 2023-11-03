@@ -10,4 +10,4 @@ El Wireframe se ha realizado con Excalidraw.
 
 [![COOLORS](https://img.shields.io/badge/coolors-%23000000.svg?style=for-the-badge)](https://coolors.co/151515-c2c2c2-f1f1f1-3da6fc-21cc78-f7fb39-ff2853)
 
-<img src="Colores_FILM-E.png" alt="Colores Film-E" width="auto" height="auto" style="border-radius:8px">
+<img src="Colores_FILM-E.png" alt="Colores Film-E" width="500" height="auto" style="border-radius:8px">
