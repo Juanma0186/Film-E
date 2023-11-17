@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Login</title>
+</head>
+
+<body style="background-image: url('img/login2.jpg')"
+    class="relative flex items-center w-screen h-screen bg-center bg-no-repeat bg-cover font-poppins">
+
+    <div class="absolute top-0 left-0 w-screen h-screen bg-black opacity-90"></div>
+    <div
+        class="relative flex flex-col w-full gap-4 px-4 py-6 mx-auto text-center text-white border-2 rounded-md shadow-xl md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 shadow-red-500">
+        <h1 class="text-2xl font-semibold uppercase">Login</h1>
+        <div class="flex flex-col w-full gap-2 mx-auto md:w-3/4">
+            <label class="text-xl font-semibold text-left" for="">Usuario</label>
+            <input
+                class="px-4 py-2 text-white transition duration-500 ease-in-out bg-transparent border-2 rounded-full outline-none focus:border-red-500"
+                type="text" placeholder="Ingresa tu usuario">
+        </div>
+        <div class="flex flex-col w-full gap-2 mx-auto md:w-3/4">
+            <label class="text-xl font-semibold text-left" for="">Contraseña</label>
+            <input
+                class="px-4 py-2 text-white transition duration-500 ease-in-out bg-transparent border-2 rounded-full outline-none focus:border-red-500"
+                type="password" placeholder="Ingresa tu contraseña">
+        </div>
+        <div class="flex items-center gap-4 mx-auto text-md">
+            <input type="checkbox" name="Remember me" id="">
+            <label for="">Recuerdame</label>
+            <!-- <a class="hover:underline" href="#">Olvide contraseña</a> -->
+        </div>
+        <a href="index.html">
+            <button class="w-full px-4 py-2 mx-auto text-xl bg-red-700 border-2 border-red-500 rounded-md md:w-1/2 hover:bg-transparent hover:border-red-600">
+                Iniciar
+            </button>
+        </a>
+    </div>
+</body>
+
+</html>
