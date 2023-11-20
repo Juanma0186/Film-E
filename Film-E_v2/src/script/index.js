@@ -8,21 +8,18 @@ function fetchMovies() {
     .then((data) => {
       const movieList = document.getElementById("movieList");
       data.results.forEach((movie) => {
-        const movieItem = document.createElement("div");
+        const movieItem = document.createElement("a");
+        movieItem.href = `detallePelicula.html?id=${movie.id}`;
         movieItem.classList.add(
           "movie-item",
           "bg-gris",
-          "p-5",
-          "rounded-lg",
-          "shadow-md",
-          "w-64", // Añade esta clase para establecer un ancho fijo
+          "shadow-lg",
+          "w-[25%]", // Añade esta clase para establecer un ancho fijo
           "flex-none" // Añade esta clase para evitar que las tarjetas se estiren
         );
         movieItem.innerHTML = `
-                    <a href="detallePelicula.html?id=${movie.id}">
-                        <img class="w-full h-36 object-cover rounded-lg mb-2" src="${IMAGE_URL}${movie.poster_path}" alt="${movie.title}">
-                        <h2 class="text-xl text-center font-bold truncate">${movie.title}</h2>
-                    </a>
+                  <div class="w-full h-full  rounded-lg"><img class="h-full w-full object-cover" src="${IMAGE_URL}${movie.poster_path}" alt="${movie.title}" /></div>
+                  <h2 class="text-xl text-center font-bold truncate">${movie.title}</h2>
                 `;
         movieList.appendChild(movieItem);
       });
@@ -32,13 +29,10 @@ function fetchMovies() {
 
 fetchMovies();
 
-
-
-
-
-
-
-document.getElementById('mobile-menu-btn').addEventListener('click', function () {
-    var mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
-});
+document
+  .getElementById("mobile-menu-btn")
+  .addEventListener("click", function () {
+    var mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.style.display =
+      mobileMenu.style.display === "none" ? "block" : "none";
+  });
