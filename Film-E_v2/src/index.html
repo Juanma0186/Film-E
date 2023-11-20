@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <title>Film-E</title>
+</head>
+
+<body class=" font-poppins">
+
+    <header>
+        <nav class="bg-indigo-500">
+            <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="relative flex items-center justify-between h-16">
+                    <div class="flex items-center flex-shrink-0">
+                        <a href="#" class="block px-3 py-2 text-2xl font-medium text-white rounded-md bg-rojo"
+                            aria-current="page">FILM-E</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex justify-end space-x-4">
+                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                            <a href="#"
+                                class="px-3 py-2 font-medium rounded-md text-md text-blanco hover:bg-rojo hover:text-white">Pelis</a>
+                            <a href="#"
+                                class="px-3 py-2 font-medium rounded-md text-md text-blanco hover:bg-rojo hover:text-white">Series</a>
+                            <a href="#"
+                                class="px-3 py-2 font-medium rounded-md text-md text-blanco hover:bg-rojo hover:text-white">Anime</a>
+                            <a href="#"
+                                class="px-3 py-2 font-medium rounded-md text-md text-blanco hover:bg-rojo hover:text-white">Unete</a>
+                        </div>
+                    </div>
+                    <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button" id="mobile-menu-btn"
+                            class="relative inline-flex items-center justify-center p-2 rounded-md text-rojo hover:bg-rojo hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-rojo"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <!--
+                            Icon when menu is closed.
+        
+                            Menu open: "hidden", Menu closed: "block"
+                            -->
+                            <svg class="block w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+
+                            <svg class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu" style="display: none;">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md text-blanco hover:bg-rojo hover:text-white">Pelis</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md text-blanco hover:bg-rojo hover:text-white">Series</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md text-blanco hover:bg-rojo hover:text-white">Anime</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md text-blanco hover:bg-rojo hover:text-white">Unete</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="relative h-[calc(100vh-4rem)] bg-center bg-cover" style="background-image: url('/img/hero3.png');">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h1 class="mb-3 text-6xl text-blanco">¡Bienvenido a Film-E!</h1>
+                    <p class="mb-5 text-2xl ">¿Necesitas información? ¡Explora!</p>
+                    <form action="#" method="GET" class="flex items-center justify-center">
+                        <input type="text" name="search" placeholder="Buscar..."
+                            class="px-4 py-2 text-gray-800 bg-white rounded-l-full shadow-lg focus:outline-none">
+                        <button type="submit"
+                            class="px-4 py-2 text-white rounded-r-full shadow-lg bg-rojo hover:bg-red-800 focus:outline-none">
+                            Buscar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h1 class="mt-5 mb-10 text-4xl font-bold text-center">Tendencias</h1>
+        <div id="movieList" class="flex gap-4 mx-auto mt-5 mb-5 overflow-x-scroll"></div>
+
+        <h1 class="mt-5 mb-10 text-4xl font-bold text-center">Populares</h1>
+        <div id="movieList" class="flex gap-4 mx-auto mt-5 mb-5 "></div>
+
+    </main>
+
+
+
+
+
+
+    <footer class="p-6 mt-8 bg-indigo-500">
+        <div class="container mx-auto text-center">
+            <p class="text-sm text-white">
+                © 2023 Film-E. Todos los derechos reservados.
+            </p>
+            <div class="grid grid-cols-2 gap-2 mt-4 md:justify-center md:flex md:space-x-4">
+                <a href="#" class="text-white hover:underline">About Us</a>
+                <a href="#" class="text-white hover:underline">Soporte</a>
+                <a href="#" class="text-white hover:underline">Sugerencias</a>
+                <a href="#" class="text-white hover:underline">Términos</a>
+                <a href="#" class="text-white hover:underline">Política</a>
+                <a href="#" class="text-white hover:underline">Recursos</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="script/index.js"></script>
+</body>
+
+</html>
