@@ -10,31 +10,32 @@
     <title>Film-E</title>
 </head>
 
-<body class="overflow-x-hidden font-poppins">
+<body class="transition-all duration-300 ease-linear font-poppins">
 
     <!--? HEADER -->
     <header>
 
-        <nav class="bg-blanco-500">
-            <div class="relative flex items-center justify-between h-16 px-[10%] py-[1em]">
+        <nav class="bg-blanco-500 dark:bg-[#222] transition-all duration-300 ease-linear">
+            <div class="relative flex items-center justify-between h-20 px-[10%] py-[1em]">
                 <div class="flex items-center flex-shrink-0">
-                    <a href="#" class="block px-3 py-2 text-2xl font-medium text-white rounded-md bg-azul-500"
-                        aria-current="page">FILM-E</a>
+                    <a href="index.html" class="block h-full text-4xl font-bold rounded-lg text-azul-500 hover:italic"
+                        aria-current="page">
+                        FILM<span class="text-verde-500">-</span><span class="text-rojo-500">E</span>
+                    </a>
                 </div>
-                <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex justify-end space-x-3">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="#"
-                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500">Pelis</a>
-                        <a href="#"
-                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500">Series</a>
-                        <a href="#"
-                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500 hover:duration-300">Anime</a>
-                        <a href="#"
-                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500 hover:duration-300">Únete</a>
-                    </div>
+
+                <div class="hidden sm:ml-6 sm:flex sm:items-center sm:justify-center">
+                    <button class="switch" id="switch">
+                        <span><i class="bi bi-sun-fill"></i></span>
+                        <span><i class="text-lg bi bi-moon-fill"></i></span>
+                    </button>
+                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Pelis</a>
+                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Series</a>
+                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Anime</a>
+                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Únete</a>
+
                 </div>
-                <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                <div class="flex items-center sm:hidden">
                     <!-- Mobile menu button-->
                     <button type="button" id="mobile-menu-btn"
                         class="relative inline-flex items-center justify-center p-2 rounded-md text-azul-500 hover:bg-azul-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-azul-500"
@@ -65,13 +66,13 @@
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a href="#"
-                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300">Pelis</a>
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Pelis</a>
                     <a href="#"
-                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300">Series</a>
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Series</a>
                     <a href="#"
-                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300">Anime</a>
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Anime</a>
                     <a href="#"
-                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300">Únete</a>
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Únete</a>
                 </div>
             </div>
         </nav>
@@ -79,10 +80,25 @@
     <!--? FIN HEADER -->
 
     <!--? MAIN -->
-    <main>
+    <main class="dark:bg-[#222] transition-all ease-linear duration-300">
 
+        <!--BACK-TO-TOP-->
+        <div id="back-to-top" class="fixed bottom-0 right-0 z-10 mb-4 mr-4">
+            <button
+                class="items-center justify-center hidden w-12 h-12 text-white transition-all duration-300 rounded-full opacity-0 bg-azul-500 hover:bg-azul-300 focus:outline-none"
+                id="toTop">
+                <svg class="w-6 h-6 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M5 10l7-7m0 0l7 7m-7-7v18">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!--Sección del Hero-->
         <section
-            class="relative h-[calc(100vh-4rem)] bg-center bg-cover bg-[url('/img/hero-light.webp')] dark:bg-[url('/img/hero-dark.webp')]">
+            class="relative h-[calc(100vh-5rem)] bg-center bg-cover bg-[url('/img/hero-light.webp')] dark:bg-[url('/img/hero-dark.webp')] transition-all duration-300 ease-linear">
             <div class="absolute inset-0 bg-black opacity-40"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
                 <h1 class="mb-3 text-6xl text-blanco">¡Bienvenido a Film-E!</h1>
@@ -101,14 +117,16 @@
 
         <!--Sección de Películas disponibles en cines-->
         <section class="px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl italic font-semibold">En Cines</h1>
+            <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500"><span class="text-rojo-500">E</span>n
+                Cines</h1>
             <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em]"></div>
         </section>
 
         <!--Sección de Películas elegidas por nosotros-->
         <section class="mb-5 px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl italic font-semibold">Selección Film-E</h1>
-            <div id="ourMoviesList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em] scroll-container select-none">
+            <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500"><span
+                    class="text-azul-500">S</span>elección Film-E</h1>
+            <div id="ourMoviesList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em] select-none">
 
             </div>
         </section>
@@ -139,16 +157,17 @@
                         Eleva tu experiencia cinematográfica y únete a nuestra comunidad apasionada. ¡No te pierdas
                         ningún detalle, únete ahora!
                     </p>
-                    <a href="suscripcion.html"> 
-                    <button
-                        class="text-xl mt-[1em] px-5 py-3 text-white rounded-lg shadow-lg bg-azul-500 hover:bg-azul-300 transition-all duration-300 focus:outline-none">¡ÚNETE!</button>
+                    <a href="suscripcion.html">
+                        <button
+                            class="text-xl mt-[1em] px-5 py-3 text-white rounded-lg shadow-lg bg-azul-500 hover:bg-azul-300 transition-all duration-300 focus:outline-none">¡ÚNETE!</button>
                     </a>
                 </div>
             </div>
         </section>
         <!--Sección de Películas más populares-->
-        <section class="mb-5 px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl italic font-semibold">Populares</h1>
+        <section class="pb-[2em] px-[2em] mt-[2em]">
+            <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500"><span
+                    class="text-verde-500">P</span>opulares</h1>
             <div id="popularList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em]"></div>
         </section>
 
@@ -156,10 +175,15 @@
     <!--? FIN MAIN -->
 
     <!--? FOOTER -->
-    <footer class="p-6 mt-8 bg-negro-500">
+    <footer class="p-6 bg-negro-500">
         <div
             class="flex flex-col items-center justify-start w-full gap-6 mt-4 sm:gap-2 sm:justify-around sm:items-center sm:flex-row">
-            <div class="w-fit">
+            <div class="flex flex-col items-center justify-center gap-2 w-fit ">
+                <a href="index.html"
+                    class="block h-full p-2 text-4xl font-bold rounded-lg text-azul-500 hover:italic bg-blanco-500"
+                    aria-current="page">
+                    FILM<span class="text-verde-500">-</span><span class="text-rojo-500">E</span>
+                </a>
                 <img src="img/" alt="" class="w-100">
                 <p class="text-sm text-white">
                     © 2023 Film-E.
@@ -179,6 +203,7 @@
     </footer>
     <!--? FIN FOOTER -->
 
+    <script src="script/modoOscuro.js"></script>
     <script src="script/index.js"></script>
 </body>
 

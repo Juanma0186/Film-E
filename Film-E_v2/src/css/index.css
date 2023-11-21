@@ -123,6 +123,10 @@ section>div::-webkit-scrollbar-thumb {
     background: theme("colors.azul.700");
 }
 
+.dark section>div::-webkit-scrollbar-thumb {
+    background: theme("colors.azul.500");
+}
+
 /*? MOVING TEXT */
 @keyframes marquee {
     0% {
@@ -153,13 +157,49 @@ section>div::-webkit-scrollbar-thumb {
             theme("colors.amarillo.500"));
 }
 
-/*? CONTAINER SCROLL*/
-.scroll-container {
-    cursor: grab;
-    cursor: -webkit-grab;
+/*? SWITCH */
+.switch {
+    background: theme("colors.negro.500");
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    margin-right: 1rem;
 }
 
-.scroll-container:active {
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: theme("colors.blanco.500");
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+}
+
+.switch.active {
+    background: theme("colors.yellow.500");
+    color: theme("colors.negro.500");
+}
+
+.switch.active::after {
+    right: 0;
+    left: unset;
+
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
 }

@@ -28,7 +28,8 @@ function printMovies(API_URL, list) {
           "hover:opacity-80",
           "flex-none",
           "overflow-hidden",
-          "whitespace-nowrap"
+          "whitespace-nowrap",
+          "dark:text-blanco-500"
         );
 
         movieItem.innerHTML = `
@@ -58,12 +59,6 @@ function fetchPopularMovies() {
   printMovies(API_URL, "popularList");
 }
 
-window.onload = function () {
-  fetchMoviesCinema();
-  fetchOurMovies();
-  fetchPopularMovies();
-};
-
 document
   .getElementById("mobile-menu-btn")
   .addEventListener("click", function () {
@@ -72,30 +67,29 @@ document
       mobileMenu.style.display === "none" ? "block" : "none";
   });
 
-// ! Función para el scroll horizontal
-let isDragging = false;
-let startX;
-let scrollLeft;
+// Cogemos el boton del back-to-top
+const btnBackToTop = document.getElementById("toTop");
 
-const scrollContainer = document.querySelector(".scroll-container");
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btnBackToTop.style.display = "flex";
+    btnBackToTop.style.opacity = "1";
+  } else {
+    btnBackToTop.style.opacity = "0";
+  }
+}
 
-scrollContainer.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  startX = e.pageX - scrollContainer.offsetLeft;
-  scrollLeft = scrollContainer.scrollLeft;
+btnBackToTop.addEventListener("click", function () {
+  // Subir hasta arriba y smooth
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-scrollContainer.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  const x = e.pageX - scrollContainer.offsetLeft;
-  const walk = (x - startX) * 2; // Puedes ajustar el factor de multiplicación según tu preferencia
-  scrollContainer.scrollLeft = scrollLeft - walk;
-});
+window.onscroll = function () {
+  scrollFunction();
+};
 
-scrollContainer.addEventListener("mouseup", () => {
-  isDragging = false;
-});
-
-scrollContainer.addEventListener("mouseleave", () => {
-  isDragging = false;
-});
+window.onload = function () {
+  fetchMoviesCinema();
+  fetchOurMovies();
+  fetchPopularMovies();
+};
