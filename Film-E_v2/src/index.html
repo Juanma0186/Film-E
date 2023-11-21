@@ -10,53 +10,52 @@
     <title>Film-E</title>
 </head>
 
-<body class=" font-poppins">
+<body class="overflow-x-hidden font-poppins">
 
     <header>
         <nav class="bg-blanco-500">
-            <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div class="relative flex items-center justify-between h-16">
-                    <div class="flex items-center flex-shrink-0">
-                        <a href="#" class="block px-3 py-2 text-2xl font-medium text-white rounded-md bg-azul-500"
-                            aria-current="page">FILM-E</a>
+
+            <div class="relative flex items-center justify-between h-16 px-[10%] py-[1em]">
+                <div class="flex items-center flex-shrink-0">
+                    <a href="#" class="block px-3 py-2 text-2xl font-medium text-white rounded-md bg-azul-500"
+                        aria-current="page">FILM-E</a>
+                </div>
+                <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex justify-end space-x-3">
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        <a href="#"
+                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500">Pelis</a>
+                        <a href="#"
+                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500">Series</a>
+                        <a href="#"
+                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500 hover:duration-300">Anime</a>
+                        <a href="#"
+                            class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500 hover:duration-300">Únete</a>
                     </div>
-                    <div class="hidden sm:ml-6 sm:block">
-                        <div class="flex justify-end space-x-3">
-                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <a href="#"
-                                class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500">Pelis</a>
-                            <a href="#"
-                                class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500">Series</a>
-                            <a href="#"
-                                class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500 hover:duration-300">Anime</a>
-                            <a href="#"
-                                class="px-3 py-2 font-medium rounded-md text-md hover:text-blanco-500 hover:bg-azul-500 hover:duration-300">Únete</a>
-                        </div>
-                    </div>
-                    <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
-                        <!-- Mobile menu button-->
-                        <button type="button" id="mobile-menu-btn"
-                            class="relative inline-flex items-center justify-center p-2 rounded-md text-azul-500 hover:bg-azul-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-azul-500"
-                            aria-controls="mobile-menu" aria-expanded="false">
-                            <span class="absolute -inset-0.5"></span>
-                            <span class="sr-only">Open main menu</span>
-                            <!--
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" id="mobile-menu-btn"
+                        class="relative inline-flex items-center justify-center p-2 rounded-md text-azul-500 hover:bg-azul-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-azul-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <!--
                             Icon when menu is closed.
         
                             Menu open: "hidden", Menu closed: "block"
                             -->
-                            <svg class="block w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
+                        <svg class="block w-6 h-6 border" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
 
-                            <svg class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
+                        <svg class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
 
@@ -100,7 +99,7 @@
 
         <section class="px-[2em] mt-[2em]">
             <h1 class="mb-5 text-4xl font-semibold">Tendencias</h1>
-            <div id="movieList" class="flex gap-4 mx-auto overflow-x-scroll pb-[2em]"></div>
+            <div id="movieList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em]"></div>
         </section>
         <section class="px-[2em] mt-[2em]">
             <h1 class="mb-5 text-4xl font-semibold">Populares</h1>

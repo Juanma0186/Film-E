@@ -8,19 +8,34 @@ function fetchMovies() {
     .then((data) => {
       const movieList = document.getElementById("movieList");
       data.results.forEach((movie) => {
-        const movieItem = document.createElement("a");
-        movieItem.href = `detallePelicula.html?id=${movie.id}`;
+        console.log(movie.releaseDate);
+        const dateObject = new Date(movie.releaseDate);
+
+        // Obtener día, mes y año
+        const day = dateObject.getDate();
+        const month = dateObject.getMonth() + 1;
+        const year = dateObject.getFullYear();
+
+        // Crear una cadena con el formato deseado (DD-MM-YYYY)
+        const formattedDate = `${day}-${month < 10 ? "0" : ""}${month}-${year}`;
+        const movieItem = document.createElement("div");
         movieItem.classList.add(
-          "movie-item",
-          "bg-gris",
-          "shadow-lg",
-          "w-[25%]", // Añade esta clase para establecer un ancho fijo
-          "flex-none" // Añade esta clase para evitar que las tarjetas se estiren
+          "w-32",
+          "lg:w-48",
+          "cursor-pointer",
+          "transition-all",
+          "duration-200",
+          "hover:opacity-80",
+          "flex-none"
         );
+
         movieItem.innerHTML = `
-                  <div class="w-full h-full  rounded-lg"><img class="h-full w-full object-cover" src="${IMAGE_URL}${movie.poster_path}" alt="${movie.title}" /></div>
-                  <h2 class="text-xl text-center font-bold truncate">${movie.title}</h2>
-                `;
+        <img class="rounded-lg w-full" src="${IMAGE_URL}${movie.poster_path}" />
+        <div class="mt-2">
+          <p class="text-lg text-center truncate">${movie.title}</p>
+          <p class="text-sm text-center text-gris-300">${formattedDate}</p>
+        </div>
+        `;
         movieList.appendChild(movieItem);
       });
     })
@@ -32,7 +47,7 @@ fetchMovies();
 document
   .getElementById("mobile-menu-btn")
   .addEventListener("click", function () {
-    var mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
     mobileMenu.style.display =
       mobileMenu.style.display === "none" ? "block" : "none";
   });
