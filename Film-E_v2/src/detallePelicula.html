@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Película</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="bg-gray-100">
+    
+    <div id="movieDetails" class="flex flex-col p-5 rounded-md shadow-md bg-blanco-700 md:flex-row"></div>
+
+    
+    <div id="trailerModal" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+        <div id="trailerContainer" class="w-11/12 p-5 bg-white rounded-lg md:w-1/2"></div>
+    </div>
+    
+
+    <div id="castList" class="flex flex-row pb-5 space-x-4 overflow-x-scroll"></div>
+    
+    <button id="backButton" class="px-4 py-2 m-5 font-bold rounded bg-azul-500 text-blanco-700 hover:bg-azul-300">
+        Volver atrás
+    </button >
+    <script type="module" src="script/detallePelicula.js"></script>
+</body>
+</html>
