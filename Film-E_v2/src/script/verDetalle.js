@@ -1,8 +1,10 @@
-import { MOVIE_API_URL, IMAGE_URL } from './config.js';
+import { MOVIE_API_URL, IMAGE_URL ,API_KEY} from './config.js';
 import { verTrailer } from './verTrailer.js';
 import { mostrarModal } from './mostrarModal.js';
+import { printMovies } from './printMovie.js';
 
 let movieTitle;
+let currentPage = 1;
 
 export function verDetalle() {
   fetch(MOVIE_API_URL)
@@ -32,7 +34,16 @@ export function verDetalle() {
           
 
       document.getElementById("trailerButton").addEventListener("click", () => verTrailer(movieTitle));
+
+      movie.genres.forEach((genre) => {
+        const GENRE_API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre.id}`;
+        printMovies(GENRE_API_URL, "cineList"); // Llama a printMovies para cada género
+      });
+     
     })
     .catch((error) => console.error("Error:", error));
   return movieTitle;
 }
+
+
+
