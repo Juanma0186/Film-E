@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/suscripcion.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Suscripción</title>
+</head>
+
+<body class="grid h-full min-h-screen text-[1.1rem] leading-[1.2] place-items-center  bg-gris-100 text-blanco-900 ">
+  <main class="px-6 py-12 mx-auto flow max-w-7xl">
+    <h2
+      class="text-center text-2xl md:text-4xl font-bold tracking-wide uppercase  mb-[1em] text-blamco-300">
+      Planes de Suscripción</h2>
+    <div class="relative main__cards">
+      <div class="flex flex-wrap gap-10">
+        <div class="cards__card card text-blanco-900 bg-gris-200 ">
+          <h2 class="text-lg font-semibold">Básico</h2>
+          <p class="text-4xl font-bold ">9.99€</p>
+          <ul role="list" class="leading-7 list-none flow">
+            <li>Acceso a películas, series y animes estándar</li>
+            <li>Soporte por correo electrónico</li>
+          </ul>
+          <a href="#basic" class=" cta">Empezar</a>
+        </div>
+
+        <div class="cards__card card text-blanco-900 bg-gris-200">
+          <h2 class="text-lg font-semibold">Pro</h2>
+          <p class="text-4xl font-bold">19.99€</p>
+          <ul role="list" class="leading-7 list-none flow">
+            <li>Acceso a contenido exclusivo y avanzado</li>
+            <li>Soporte prioritario por correo electrónico</li>
+            <li>Acceso exclusivo a eventos y lanzamientos</li>
+          </ul>
+          <a href="#pro" class=" cta">Actualizar a Pro</a>
+        </div>
+
+        <div class="cards__card card text-blanco-900 bg-gris-200">
+          <h2 class="text-lg font-semibold">Ultimate</h2>
+          <p class="text-4xl font-bold">29.99€</p>
+          <ul role="list" class="leading-7 list-none flow">
+            <li>Acceso ilimitado a todas las películas, series y animes</li>
+            <li>Soporte prioritario 24/7</li>
+            <li>Sesiones exclusivas con directores y creadores</li>
+            <li>Contenido exclusivo y estrenos anticipados</li>
+          </ul>
+          <a href="#ultimate" class=" cta">Ir a Ultimate</a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-10 overlay"></div>
+    </div>
+  </main>
+
+ 
+  <a href="/index.html"
+  class="px-4 py-2 transition-all duration-300 rounded-md cta hover:bg-gradient-to-br from-purple-600 to-rojo-400 hover:text-white">
+    Volver
+  </a>
+
+  <script src="script/suscripcion.js"></script>
+</body>
+
+</html>
