@@ -1,4 +1,4 @@
-import { IMAGE_URL,API_KEY } from "./config";
+import { IMAGE_URL } from "./config";
 
 export function printMovies(API_URL, list) {
     fetch(API_URL)
