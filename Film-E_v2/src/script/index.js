@@ -34,7 +34,7 @@ function printMovies(API_URL, list) {
         movieItem.innerHTML = `
         <img class="rounded-lg w-full" src="${IMAGE_URL}${movie.poster_path}" loading="lazy"  />
         <div class="mt-2">
-<p class="text-lg text-center ${movie.title.length > 17 ? "moving-text" : ""}" style="${movie.title.length > 17 ? `--animation-duration: ${movie.title.length * 0.2}s` : ""}">${movie.title}</p>
+          <p class="text-lg text-center ${movie.title.length > 17 ? "moving-text" : ""}" style="${movie.title.length > 17 ? `--animation-duration: ${movie.title.length * 0.2}s` : ""}">${movie.title}</p>
           <p class="text-sm text-center text-gris-300">${formattedDate}</p>
         </div>
         `;
@@ -48,9 +48,10 @@ function fetchMoviesCinema() {
   printMovies(API_URL, "cineList");
 }
 
-// function fetchOurMovies() {
-
-// }
+function fetchOurMovies() { // TODO: Cambiar cuando tengamos nuestra selección de películas
+  const API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=es-ES`;
+  printMovies(API_URL, "ourMoviesList");
+}
 
 function fetchPopularMovies() {
   const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES`;
@@ -59,7 +60,7 @@ function fetchPopularMovies() {
 
 window.onload = function () {
   fetchMoviesCinema();
-  // fetchOurMovies();
+  fetchOurMovies();
   fetchPopularMovies();
 };
 
@@ -70,3 +71,31 @@ document
     mobileMenu.style.display =
       mobileMenu.style.display === "none" ? "block" : "none";
   });
+
+// ! Función para el scroll horizontal
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+const scrollContainer = document.querySelector(".scroll-container");
+
+scrollContainer.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - scrollContainer.offsetLeft;
+  scrollLeft = scrollContainer.scrollLeft;
+});
+
+scrollContainer.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  const x = e.pageX - scrollContainer.offsetLeft;
+  const walk = (x - startX) * 2; // Puedes ajustar el factor de multiplicación según tu preferencia
+  scrollContainer.scrollLeft = scrollLeft - walk;
+});
+
+scrollContainer.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+scrollContainer.addEventListener("mouseleave", () => {
+  isDragging = false;
+});

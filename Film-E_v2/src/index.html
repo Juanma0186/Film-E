@@ -12,9 +12,10 @@
 
 <body class="overflow-x-hidden font-poppins">
 
+    <!--? HEADER -->
     <header>
-        <nav class="bg-blanco-500">
 
+        <nav class="bg-blanco-500">
             <div class="relative flex items-center justify-between h-16 px-[10%] py-[1em]">
                 <div class="flex items-center flex-shrink-0">
                     <a href="#" class="block px-3 py-2 text-2xl font-medium text-white rounded-md bg-azul-500"
@@ -75,48 +76,84 @@
             </div>
         </nav>
     </header>
+    <!--? FIN HEADER -->
 
+    <!--? MAIN -->
     <main>
 
         <section
             class="relative h-[calc(100vh-4rem)] bg-center bg-cover bg-[url('/img/hero-light.webp')] dark:bg-[url('/img/hero-dark.webp')]">
             <div class="absolute inset-0 bg-black opacity-40"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center text-white">
-                    <h1 class="mb-3 text-6xl text-blanco">¡Bienvenido a Film-E!</h1>
-                    <p class="mb-5 text-2xl ">¿Necesitas información? ¡Explora!</p>
-                    <form action="#" method="GET" class="flex items-center justify-center">
-                        <input type="text" name="search" placeholder="Buscar..."
-                            class="px-4 py-2 text-gray-800 bg-white rounded-l-full shadow-lg focus:outline-none font-poppins">
-                        <button type="submit"
-                            class="px-4 py-2 text-white rounded-r-full shadow-lg bg-azul hover:bg-azul-300 hover:transition-all hover:duration-300 focus:outline-none">
-                            Buscar
-                        </button>
-                    </form>
-                </div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+                <h1 class="mb-3 text-6xl text-blanco">¡Bienvenido a Film-E!</h1>
+                <p class="mb-5 text-2xl ">¿Necesitas información? ¡Explora!</p>
+                <form action="#" method="GET" class="flex items-center justify-center">
+                    <input type="text" name="search" placeholder="Buscar..."
+                        class="px-4 py-2 text-gray-800 bg-white rounded-l-full shadow-lg focus:outline-none font-poppins">
+                    <button type="submit"
+                        class="flex items-center justify-center gap-2 px-4 py-2 text-white transition-all duration-300 rounded-r-full shadow-lg bg-azul hover:bg-azul-300 focus:outline-none">
+                        <i class="bi bi-search"></i>
+                        Buscar
+                    </button>
+                </form>
             </div>
         </section>
 
         <!--Sección de Películas disponibles en cines-->
         <section class="px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl font-semibold">En Cines</h1>
+            <h1 class="mb-5 text-4xl italic font-semibold">En Cines</h1>
             <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em]"></div>
         </section>
 
         <!--Sección de Películas elegidas por nosotros-->
         <section class="mb-5 px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl font-semibold">Selección Film-E</h1>
-            <div id="ourMoviesList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em]"></div>
+            <h1 class="mb-5 text-4xl italic font-semibold">Selección Film-E</h1>
+            <div id="ourMoviesList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em] scroll-container select-none">
+
+            </div>
         </section>
 
+        <!--Seccion del Banner de Unirse-->
+        <section class="p-[2em] mt-[1em] md:p-[4em] md:mt-[2em] ">
+            <div
+                class="bg-[url(/img/patron.webp)] rounded-lg flex items-center justify-center relative overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 bg-black opacity-70"></div>
+                <div
+                    class="relative inset-0 flex flex-col items-center justify-center text-center text-white p-[5%] md:p-[2em] w-[75%]">
+                    <h2
+                        class="text-2xl md:text-4xl font-bold tracking-wide uppercase text-transparent  mb-[1em] bg-gradient">
+                        !Únete a Film-E!
+                    </h2>
+                    <h3 class="text-lg md:text-2xl  mb-[1em]">
+                        Ven a formar parte de la mejor comunidad de cinéfilos y amantes de todo tipo de contenido
+                        audiovisual.
+                        <br />
+                        ¡No te arrepentirás!
+                    </h3>
+                    <p class="hidden md:block">
+                        ¡Bienvenido al lugar ideal para los amantes del cine, series y anime! Explora detalles
+                        fascinantes de tus películas y
+                        programas favoritos.
+                        Suscríbete para acceder a contenido exclusivo, funciones premium y
+                        experiencias personalizadas.
+                        Eleva tu experiencia cinematográfica y únete a nuestra comunidad apasionada. ¡No te pierdas
+                        ningún detalle, únete ahora!
+                    </p>
+                    <button
+                        class="text-xl mt-[1em] px-5 py-3 text-white rounded-lg shadow-lg bg-azul-500 hover:bg-azul-300 transition-all duration-300 focus:outline-none">¡ÚNETE!</button>
+                </div>
+            </div>
+        </section>
         <!--Sección de Películas más populares-->
         <section class="mb-5 px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl font-semibold">Populares</h1>
+            <h1 class="mb-5 text-4xl italic font-semibold">Populares</h1>
             <div id="popularList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em]"></div>
         </section>
 
     </main>
+    <!--? FIN MAIN -->
 
+    <!--? FOOTER -->
     <footer class="p-6 mt-8 bg-negro-500">
         <div
             class="flex flex-col items-center justify-start w-full gap-6 mt-4 sm:gap-2 sm:justify-around sm:items-center sm:flex-row">
@@ -138,6 +175,7 @@
             </div>
         </div>
     </footer>
+    <!--? FIN FOOTER -->
 
     <script src="script/index.js"></script>
 </body>

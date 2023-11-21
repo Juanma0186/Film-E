@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
 @tailwind base;
 @tailwind components;
@@ -20,16 +21,10 @@
 }
 
 section>div::-webkit-scrollbar-thumb {
-    background: theme("colors.azul.500");
+    background: theme("colors.azul.700");
 }
 
 /*? MOVING TEXT */
-.moving-text {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee var(--animation-duration) linear infinite;
-}
-
 @keyframes marquee {
     0% {
         transform: translate(0, 0);
@@ -38,4 +33,34 @@ section>div::-webkit-scrollbar-thumb {
     100% {
         transform: translate(-100%, 0);
     }
+}
+
+.moving-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee var(--animation-duration) linear infinite;
+}
+
+/*? BACKGROUND*/
+
+.bg-gradient {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    /*Usa los colores de tailwind con theme  azul,rojo,verde y amarillo*/
+    background-image: linear-gradient(45deg,
+            theme("colors.azul.500"),
+            theme("colors.verde.500"),
+            theme("colors.amarillo.500"));
+}
+
+/*? CONTAINER SCROLL*/
+.scroll-container {
+    cursor: grab;
+    cursor: -webkit-grab;
+}
+
+.scroll-container:active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
 }
