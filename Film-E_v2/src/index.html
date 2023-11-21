@@ -97,36 +97,44 @@
             </div>
         </section>
 
+        <!--Sección de Películas disponibles en cines-->
         <section class="px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl font-semibold">Tendencias</h1>
-            <div id="movieList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em]"></div>
+            <h1 class="mb-5 text-4xl font-semibold">En Cines</h1>
+            <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em]"></div>
         </section>
-        <section class="px-[2em] mt-[2em]">
+
+        <!--Sección de Películas elegidas por nosotros-->
+        <section class="mb-5 px-[2em] mt-[2em]">
+            <h1 class="mb-5 text-4xl font-semibold">Selección Film-E</h1>
+            <div id="ourMoviesList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em]"></div>
+        </section>
+
+        <!--Sección de Películas más populares-->
+        <section class="mb-5 px-[2em] mt-[2em]">
             <h1 class="mb-5 text-4xl font-semibold">Populares</h1>
-            <div id="movieList" class="flex gap-4 mx-auto mt-[1em]"></div>
+            <div id="popularList" class="flex gap-4 mx-auto  overflow-x-scroll pb-[1em]"></div>
         </section>
 
     </main>
 
     <footer class="p-6 mt-8 bg-negro-500">
-        <div class="container mx-auto text-center">
-            <div class="grid grid-cols-3 gap-2 mt-4 ">
-                <div>
-                    <img src="img/" alt="" class="w-100">
-                    <p class="text-sm text-white">
-                        © 2023 Film-E.
-                    </p>
-                </div>
-                <div class="flex flex-col items-start justify-center">
-                    <a href="#" class="text-white hover:underline">About Us</a>
-                    <a href="#" class="text-white hover:underline">Soporte</a>
-                    <a href="#" class="text-white hover:underline">Sugerencias</a>
-                </div>
-                <div class="flex flex-col items-start justify-center">
-                    <a href="#" class="text-white hover:underline">Términos</a>
-                    <a href="#" class="text-white hover:underline">Política</a>
-                    <a href="#" class="text-white hover:underline">Recursos</a>
-                </div>
+        <div
+            class="flex flex-col items-center justify-start w-full gap-6 mt-4 sm:gap-2 sm:justify-around sm:items-center sm:flex-row">
+            <div class="w-fit">
+                <img src="img/" alt="" class="w-100">
+                <p class="text-sm text-white">
+                    © 2023 Film-E.
+                </p>
+            </div>
+            <div class="flex flex-col items-start justify-center w-[100px]">
+                <a href="#" class="text-white hover:underline">About Us</a>
+                <a href="#" class="text-white hover:underline">Soporte</a>
+                <a href="#" class="text-white hover:underline">Sugerencias</a>
+            </div>
+            <div class="flex flex-col items-start justify-center w-[100px]">
+                <a href="#" class="text-white hover:underline">Términos</a>
+                <a href="#" class="text-white hover:underline">Política</a>
+                <a href="#" class="text-white hover:underline">Recursos</a>
             </div>
         </div>
     </footer>
