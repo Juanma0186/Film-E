@@ -18,6 +18,7 @@ function fetchMovies() {
           "flex-none" // Añade esta clase para evitar que las tarjetas se estiren
         );
         movieItem.innerHTML = `
+                  <a href="detallePelicula.html?id=${movie.id}">
                   <div class="w-full h-full  rounded-lg"><img class="h-full w-full object-cover" src="${IMAGE_URL}${movie.poster_path}" alt="${movie.title}" /></div>
                   <h2 class="text-xl text-center font-bold truncate">${movie.title}</h2>
                 `;
