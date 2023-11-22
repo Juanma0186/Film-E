@@ -8,7 +8,6 @@ export function verReparto(CAST_API_URL, list) {
       const castList = document.getElementById(list);
       data.cast.slice(0, 10).forEach((member) => {
         const castMember = document.createElement("a");
-        // console.log(data);
         castMember.classList.add(
           "w-32",
           "lg:w-48",

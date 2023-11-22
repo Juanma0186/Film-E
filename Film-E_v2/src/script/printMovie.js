@@ -6,7 +6,6 @@ export function printMovies(API_URL, list) {
     .then((data) => {
       const movieList = document.getElementById(list);
       data.results.forEach((movie) => {
-        console.log(movie);
         // Cambiar el formato de la fecha
         const dateObject = new Date(movie.release_date);
 

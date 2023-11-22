@@ -1,6 +1,5 @@
 export function toggleDarkMode() {
   const btnSwitch = document.querySelector("#switch");
-  console.log("Entro en toggleDarkMode");
 
   btnSwitch.addEventListener("click", () => {
     document.body.classList.toggle("dark");
