@@ -1,10 +1,10 @@
 import { IMAGE_URL } from "./config.js";
-import { mostrarModal } from "./mostrarModal.js";
 
 export function verReparto(CAST_API_URL, list) {
   fetch(CAST_API_URL)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       const castList = document.getElementById(list);
       data.cast.slice(0, 10).forEach((member) => {
         const castMember = document.createElement("a");
@@ -19,9 +19,11 @@ export function verReparto(CAST_API_URL, list) {
           "overflow-hidden",
           "whitespace-nowrap"
         );
+        // Si el miembro del reparto no tiene una imagen disponible, usamos una imagen por defecto
+        const imageUrl = member.profile_path ? `${IMAGE_URL}${member.profile_path}` : "img/default.jpg";
         castMember.innerHTML = `
                   <div class="flex flex-col items-center">
-                      <img id="imagen${member.cast_id}" class="rounded-lg w-full" src="${IMAGE_URL}${member.profile_path}" alt="${member.name}">
+                      <img id="imagen${member.cast_id}" class="rounded-lg w-full" src="${imageUrl}" alt="${member.name}">
                       <p class="text-lg text-center font-bold   ">${member.character} </p>
                       <p class="text-sm text-center font-bold text-gris-300 ">${member.name} </p>
                   </div>
@@ -31,9 +33,9 @@ export function verReparto(CAST_API_URL, list) {
       data.cast.slice(0, 10).forEach((member) => {
         document
           .getElementById(`imagen${member.cast_id}`)
-          .addEventListener("click", () =>
-            mostrarModal(IMAGE_URL + member.profile_path)
-          );
+          .addEventListener("click", () => {
+            window.location.href = `detalleActor.html?id=${member.id}`;
+          });
       });
     })
     .catch((error) => console.error("Error:", error));
