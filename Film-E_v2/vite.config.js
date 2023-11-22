@@ -1,24 +1,24 @@
 import { defineConfig } from "vite";
-import path from "node:path";
-
-const isGitHubPages = true;
-const folderName = path.basename(process.cwd()) + "/";
-const mode = process.env.NODE_ENV === "production" ? "production" : "development";
-const base = mode === "production" && isGitHubPages ? "/" + folderName : "/";
+import path from "path";
+import glob from "glob";
 
 export default defineConfig({
   root: "src",
-  base,
-  mode,
+  base: "./", // Puedes ajustar esto según tus necesidades
+  mode: "development", // Puedes cambiar a "production" para producción
   envDir: "../",
   publicDir: "../public",
   resolve: {
     alias: {
-      "@": new URL("./src", import.meta.url).pathname
-    }
+      "@": path.resolve(__dirname, "src"),
+    },
   },
   build: {
+    rollupOptions: {
+      input: glob.sync(path.resolve(__dirname, "src/*.html")), // Lee todos los archivos HTML en la carpeta src
+    },
     outDir: "../dist",
-    assetsDir: "./"
-  }
+    assetsDir: "./img",
+    manifest: true, // Genera un archivo manifest para los assets
+  },
 });
