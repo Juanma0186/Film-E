@@ -2,6 +2,7 @@ import { API_KEY } from "./config";
 import { printMovies } from "./printMovie";
 import { toTop } from "./toTop";
 import { toggleDarkMode } from "./modoOscuro";
+import { navItemsHover } from "./navItemsHover";
 
 function fetchMoviesCinema() {
   const API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=es-ES`;
@@ -30,10 +31,10 @@ document
 window.onscroll = function () {
   toTop();
 };
-
 window.onload = function () {
   fetchMoviesCinema();
   fetchOurMovies();
   fetchPopularMovies();
   toggleDarkMode();
+  navItemsHover();
 };

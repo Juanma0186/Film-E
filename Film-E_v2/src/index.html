@@ -16,7 +16,7 @@
     <header>
 
         <nav class="bg-blanco-500 dark:bg-[#222] transition-all duration-300 ease-linear">
-            <div class="relative flex items-center justify-between h-20 px-[10%] py-[1em]">
+            <div class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10">
                 <div class="flex items-center flex-shrink-0">
                     <a href="index.html" class="block h-full text-4xl font-bold rounded-lg text-azul-500 hover:italic"
                         aria-current="page">
@@ -28,12 +28,21 @@
                         <span><i class="bi bi-sun-fill"></i></span>
                         <span><i class="text-lg bi bi-moon-fill"></i></span>
                     </button>
-                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Pelis</a>
-                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Series</a>
-                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Anime</a>
-                    <a href="#" class="px-3 py-2 font-medium rounded-md text-md dark:text-blanco-500">Únete</a>
-
+                    <a href="#"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white ">Pelis</a>
+                    <a href="#"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Series</a>
+                    <a href="#"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Anime</a>
+                    <a href="#"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Únete</a>
                 </div>
+
+                <!--BACKDROP-->
+                <div id="menu-backdrop"
+                    class="absolute bg-azul-500 rounded-lg left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10">
+                </div>
+
                 <div class="flex items-center sm:hidden">
                     <!-- Mobile menu button-->
                     <button type="button" id="mobile-menu-btn"
