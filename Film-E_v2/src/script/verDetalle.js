@@ -1,12 +1,11 @@
-import { MOVIE_API_URL, IMAGE_URL ,API_KEY} from './config.js';
-import { verTrailer } from './verTrailer.js';
-import { mostrarModal } from './mostrarModal.js';
-import { printMovies } from './printMovie.js';
+import { IMAGE_URL, API_KEY } from "./config.js";
+import { verTrailer } from "./verTrailer.js";
+import { mostrarModal } from "./mostrarModal.js";
+import { printMovies } from "./printMovie.js";
 
 let movieTitle;
-let currentPage = 1;
 
-export function verDetalle() {
+export function verDetalle(MOVIE_API_URL) {
   fetch(MOVIE_API_URL)
     .then((response) => response.json())
     .then((movie) => {
@@ -29,21 +28,21 @@ export function verDetalle() {
             </div>
           </div>
           `;
-          document.getElementById("movieImage").addEventListener("click", () => mostrarModal(IMAGE_URL + movie.poster_path));
-          
-          
+      document
+        .getElementById("movieImage")
+        .addEventListener("click", () =>
+          mostrarModal(IMAGE_URL + movie.poster_path)
+        );
 
-      document.getElementById("trailerButton").addEventListener("click", () => verTrailer(movieTitle));
+      document
+        .getElementById("trailerButton")
+        .addEventListener("click", () => verTrailer(movieTitle));
 
       movie.genres.forEach((genre) => {
         const GENRE_API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre.id}`;
         printMovies(GENRE_API_URL, "cineList"); // Llama a printMovies para cada género
       });
-     
     })
     .catch((error) => console.error("Error:", error));
   return movieTitle;
 }
-
-
-

@@ -1,24 +1,24 @@
-import {IMAGE_URL } from './config.js';
-import { mostrarModal } from './mostrarModal.js';
+import { IMAGE_URL } from "./config.js";
+import { mostrarModal } from "./mostrarModal.js";
 
-export function verReparto( CAST_API_URL,list) {
+export function verReparto(CAST_API_URL, list) {
   fetch(CAST_API_URL)
     .then((response) => response.json())
     .then((data) => {
       const castList = document.getElementById(list);
       data.cast.slice(0, 10).forEach((member) => {
         const castMember = document.createElement("a");
-        console.log(data);
+        // console.log(data);
         castMember.classList.add(
           "w-32",
-            "lg:w-48",
-            "cursor-pointer",
-            "transition-all",
-            "duration-200",
-            "hover:opacity-80",
-            "flex-none",
-            "overflow-hidden",
-            "whitespace-nowrap"
+          "lg:w-48",
+          "cursor-pointer",
+          "transition-all",
+          "duration-200",
+          "hover:opacity-80",
+          "flex-none",
+          "overflow-hidden",
+          "whitespace-nowrap"
         );
         castMember.innerHTML = `
                   <div class="flex flex-col items-center">
@@ -30,7 +30,11 @@ export function verReparto( CAST_API_URL,list) {
         castList.appendChild(castMember);
       });
       data.cast.slice(0, 10).forEach((member) => {
-        document.getElementById(`imagen${member.cast_id}`).addEventListener("click", () => mostrarModal(IMAGE_URL + member.profile_path));
+        document
+          .getElementById(`imagen${member.cast_id}`)
+          .addEventListener("click", () =>
+            mostrarModal(IMAGE_URL + member.profile_path)
+          );
       });
     })
     .catch((error) => console.error("Error:", error));
