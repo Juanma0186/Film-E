@@ -5,7 +5,9 @@ export function navItemsHover() {
 
   listItem.forEach((item) => {
     item.addEventListener("mouseenter", (event) => {
-      activado.classList.remove("activado");
+      if (activado) {
+        activado.classList.remove("activado");
+      }
       const { left, top, width, height } = event.target.getBoundingClientRect();
 
       menuBackdrop.style.setProperty("--left", `${left}px`);
