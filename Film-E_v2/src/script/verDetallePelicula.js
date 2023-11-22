@@ -11,9 +11,10 @@ export function verDetalle(MOVIE_API_URL) {
     .then((movie) => {
       movieTitle = movie.title;
       const movieDetails = document.getElementById("movieDetails");
+      const imageUrl = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : "img/default.jpg";
       movieDetails.innerHTML = `
           <div class="flex flex-col md:flex-row">
-            <img id="movieImage" class="cursor-pointer w-full md:w-[400px] h-[400px] object-containt rounded-lg mb-5 md:mb-0 md:mr-8" src="${IMAGE_URL}${movie.poster_path}" alt="${movie.title}">
+            <img id="movieImage" class="cursor-pointer w-full md:w-[400px] h-[400px] object-containt rounded-lg mb-5 md:mb-0 md:mr-8" src="${imageUrl}" alt="${movie.title}">
             <div class="text-azul-100">
               <h2 class="text-3xl font-bold mb-5">${movie.title}</h2>
               <p class="mb-4">${movie.overview}</p>
@@ -31,7 +32,7 @@ export function verDetalle(MOVIE_API_URL) {
       document
         .getElementById("movieImage")
         .addEventListener("click", () =>
-          mostrarModal(IMAGE_URL + movie.poster_path)
+          mostrarModal(imageUrl)
         );
 
       document

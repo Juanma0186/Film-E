@@ -7,3 +7,5 @@ export const YOUTUBE_API_KEY = "AIzaSyBa4JfbgovmH0oBE3jHBJSfqTxlBCP0sZM";
 export const REVIEWS_API_URL = `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}&language=es-ES`;
 export const ACTOR_API_URL = `https://api.themoviedb.org/3/person/${movieId}?api_key=${API_KEY}&language=es-ES`;
 export const ACTOR_MOVIE_CREDITS_API_URL = `https://api.themoviedb.org/3/person/${movieId}/movie_credits?api_key=${API_KEY}&language=es-ES`;
+export const GENRE_API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${movieId}`;
+export const SEARCH_API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;

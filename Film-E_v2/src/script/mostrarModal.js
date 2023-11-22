@@ -1,6 +1,17 @@
 export function mostrarModal(imageSrc) {
-  document.getElementById("modalImage").src = imageSrc;
-  document.getElementById("imageModal").alt = imageSrc;
-  document.getElementById("imageModal").classList.remove("hidden");
-  document.getElementById("imageModal").classList.add("flex");
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+
+  modalImage.src = imageSrc;
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+
+  // Agrega un evento de clic al modal para ocultarlo
+  modal.addEventListener("click", (event) => {
+    // Solo oculta el modal si el clic fue fuera de la imagen
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+  });
 }

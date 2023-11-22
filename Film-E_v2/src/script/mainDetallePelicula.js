@@ -1,4 +1,4 @@
-import { verDetalle } from "./verDetalle.js";
+import { verDetalle } from "./verDetallePelicula.js";
 import { verReparto } from "./verReparto.js";
 import { verReseñas } from "./verReseñas.js";
 import { CAST_API_URL, REVIEWS_API_URL, MOVIE_API_URL } from "./config.js";

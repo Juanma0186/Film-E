@@ -1,6 +1,5 @@
-import { IMAGE_URL, ACTOR_API_URL, ACTOR_MOVIE_CREDITS_API_URL } from "./config.js";
+import { IMAGE_URL } from "./config.js";
 import { mostrarModal } from "./mostrarModal.js";
-import { printMovies } from "./printMovie.js";
 
 export function verDetalleActor(ACTOR_API_URL) {
   fetch(ACTOR_API_URL)
@@ -25,14 +24,11 @@ export function verDetalleActor(ACTOR_API_URL) {
               </div>
             </div>
             `;
-      printMovies(ACTOR_MOVIE_CREDITS_API_URL, "cineList", true);
-      mostrarModal(imageUrl);
+      document
+        .getElementById("actorImage")
+        .addEventListener("click", () =>
+          mostrarModal(imageUrl)
+        );
     })
     .catch((error) => console.error("Error:", error));
 }
-
-verDetalleActor(ACTOR_API_URL);
-
-document.getElementById("backButton").addEventListener("click", () => {
-  window.history.back();
-});
