@@ -17,35 +17,39 @@
     </section>
 
     <section class="px-[2em] mt-[2em]">
-    <h1 class="mb-5 text-4xl italic font-semibold">Reparto principal</h1>
-    <div id="castList" class="flex flex-row pb-5 space-x-4 overflow-x-scroll"></div>
+        <h1 class="mb-5 text-4xl italic font-semibold">Reparto principal</h1>
+        <div id="castList" class="flex flex-row pb-5 space-x-4 overflow-x-scroll"></div>
     </section>
-    
+
     <section class="px-[2em] mt-[2em] ">
         <h1 class="mb-5 text-4xl italic font-semibold ">Reseñas</h1>
         <div id="reviewsList" class="flex gap-4 mx-auto  pb-[1em] "></div>
     </section>
 
     <section class="px-[2em] mt-[2em]">
-    <h1 class="mb-5 text-4xl italic font-semibold text-wrap ">Recomendaciones</h1>
-    <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em] "></div>
+        <h1 class="mb-5 text-4xl italic font-semibold text-wrap ">Recomendaciones</h1>
+        <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em] "></div>
     </section>
-        
+
     <button id="backButton" class="px-4 py-2 m-5 font-bold rounded bg-azul-500 text-blanco-700 hover:bg-azul-300">
         Volver atrás
     </button>
 
+    <!--TODO: Arreglar modal-->
     <div id="trailerModal"
-        class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50 ">
-        <div id="trailerContainer" class="w-11/12 p-5 bg-white rounded-lg md:w-1/2"></div>
+        class="fixed top-0 left-0 items-center justify-center hidden w-full h-screen bg-black bg-opacity-50 ">
+        <div class="w-[75%] h-auto bg-white rounded-lg p-4">
+            <div id="trailerContainer" class="w-full h-full overflow-hidden rounded-lg aspect-video"></div>
+        </div>
     </div>
 
     <div id="imageModal"
-        class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
-        <div class="p-4 bg-white rounded-lg shadow-lg">
-            <img id="modalImage" src="" alt="">
+        class="fixed top-0 left-0 items-center justify-center hidden w-full h-screen bg-black bg-opacity-50">
+        <div class="h-[80%] w-auto bg-white rounded-lg p-4">
+            <img class="h-full max-w-full rounded-lg as" id="modalImage">
         </div>
     </div>
+
 
     <script type="module" src="script/mainDetalle.js"></script>
 </body>
