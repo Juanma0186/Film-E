@@ -42,8 +42,8 @@ export function printMovies(API_URL, list, isActor = false) {
         movieItem.innerHTML = `
           
           <div class="w-full">
-            <img class="rounded-lg w-full " src="${imageUrl}" alt="${movie.title}" loading="lazy"  />
-            <svg viewBox="0 0 36 36" class="circular-chart green max-w-[40px] lg:max-w-[50px]">
+            <img class="rounded-lg w-[128px] lg:w-[192px] h-[192px] lg:h-[288px]" src="${imageUrl}" alt="${movie.title}" loading="lazy"  />
+            <svg viewBox="0 0 36 36" class="circular-chart ${average >= 70 ? "green" : (average <= 45 ? "red" : "yellow")} max-w-[40px] lg:max-w-[50px]">
               <path class="circle" stroke-dasharray="${average}, 100" d="M18 2.0845
                   a 15.9155 15.9155 0 0 1 0 31.831
                   a 15.9155 15.9155 0 0 1 0 -31.831"></path>
