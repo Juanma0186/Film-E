@@ -2,6 +2,8 @@ import { verDetalle } from "./verDetallePelicula.js";
 import { verReparto } from "./verReparto.js";
 import { verReseñas } from "./verReseñas.js";
 import { CAST_API_URL, REVIEWS_API_URL, MOVIE_API_URL } from "./config.js";
+import { toTop } from "./toTop.js";
+import { navbar } from "./navbar.js";
 
 verDetalle(MOVIE_API_URL);
 verReparto(CAST_API_URL, "castList");
@@ -19,3 +21,11 @@ document.getElementById("backButton").addEventListener("click", () => {
 document.getElementById("imageModal").addEventListener("click", () => {
   document.getElementById("imageModal").classList.add("hidden");
 });
+
+window.onload = function () {
+  navbar();
+};
+
+window.onscroll = function () {
+  toTop();
+};
