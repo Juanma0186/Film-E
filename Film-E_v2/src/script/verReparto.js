@@ -4,8 +4,20 @@ export function verReparto(CAST_API_URL, list) {
   fetch(CAST_API_URL)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // Sino hay reparto disponible, mostramos un mensaje
       const castList = document.getElementById(list);
+      if (data.cast.length === 0) {
+        const messageElement = document.createElement("p");
+        messageElement.classList.add(
+          "text-center",
+          "text-gray-500",
+          "text-2xl",
+          "font-bold"
+        );
+        messageElement.innerText = "No hay reparto disponible.";
+        document.getElementById(list).appendChild(messageElement);
+        return;
+      }
       data.cast.slice(0, 10).forEach((member) => {
         const castMember = document.createElement("a");
         castMember.classList.add(
