@@ -1,4 +1,4 @@
-import { SEARCH_API_URL } from "./config.js";
+import { SEARCH_API_URL, SEARCH_ALL } from "./config.js";
 import $ from "jquery";
 const searchInput = $("#search-input");
 const searchResults = $("#search-results");
@@ -10,39 +10,45 @@ searchInput.on("input", debounce(() => {
     searchResults.html("");
     return;
   }
-
   $.ajax({
-    url: `${SEARCH_API_URL}${query}`,
+    url: `${SEARCH_ALL}${query}`,
     success: (data) => {
-      const movies = data.results;
-
+      const results = data.results;
+      console.log(results);
       searchResults.html("");
 
-      if (movies.length === 0) {
+      if (results.length === 0) {
         const messageElement = $("<p>").text("No se encontraron resultados de búsqueda.");
 
         searchResults.append(messageElement);
       } else {
-        movies.forEach((movie) => {
-          const movieElement = $("<div>").addClass("cursor-pointer");
+        results.forEach((result) => {
+          console.log(result);
+          const resultElement = $("<div>").addClass("cursor-pointer");
 
-          const titleElement = $("<h2>").text(movie.title);
+          const mediaType = result.media_type === "movie" ? $("<p>").text("Película") : $("<p>").text("Serie");
+          const titleElement = $("<h2>").text(result.title || result.name);
 
-          const imageElement = $("<img>").attr("src", `https://image.tmdb.org/t/p/w500${movie.poster_path}`);
-          imageElement.attr("alt", movie.title);
+          const imageElement = $("<img>").attr("src", `https://image.tmdb.org/t/p/w500${result.poster_path}`);
+          imageElement.attr("alt", result.title);
           imageElement.addClass("w-[100px]", "h-[150px]", "object-cover", "rounded", "my-2", "text-center");
 
           imageElement.on("error", () => {
             imageElement.attr("src", "img/default.jpg");
           });
 
-          movieElement.append(titleElement);
-          movieElement.append(imageElement);
+          resultElement.append(mediaType);
+          resultElement.append(titleElement);
+          resultElement.append(imageElement);
 
-          movieElement.on("click", () => {
-            window.location.href = `detallePelicula.html?id=${movie.id}`;
+          resultElement.on("click", () => {
+            if (result.media_type === "movie") {
+              window.location.href = `detallePelicula.html?id=${result.id}`;
+            } else {
+              window.location.href = `detalleSerie.html?id=${result.id}`;
+            }
           });
-          searchResults.append(movieElement);
+          searchResults.append(resultElement);
         });
       }
     },
