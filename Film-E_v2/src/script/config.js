@@ -10,3 +10,7 @@ export const ACTOR_MOVIE_CREDITS_API_URL = `https://api.themoviedb.org/3/person/
 export const GENRE_API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${movieId}`;
 export const SEARCH_API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 export const SEARCH_ALL = `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=`;
+export const serieId = new URLSearchParams(window.location.search).get("id");
+export const SERIE_API_URL = `https://api.themoviedb.org/3/tv/${serieId}?api_key=${API_KEY}&language=es-ES`;
+export const SERIE_CAST_API_URL = `https://api.themoviedb.org/3/tv/${serieId}/credits?api_key=${API_KEY}&language=es-ES`;
+export const GENRE_SERIES_API_URL_ = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_genres=${movieId}`;
