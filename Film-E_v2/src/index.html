@@ -111,16 +111,20 @@
                 <h1 class="mb-3 text-6xl text-blanco">¡Bienvenido a Film-E!</h1>
                 <p class="mb-5 text-2xl ">¿Necesitas información? ¡Explora!</p>
                 <form action="#" method="GET" class="flex items-center justify-center">
-                    <input type="text" name="search" placeholder="Buscar..."
-                        class="px-4 py-2 text-gray-800 bg-white rounded-l-full shadow-lg focus:outline-none font-poppins">
-                    <button aria-label="Buscar" type="submit"
-                        class="flex items-center justify-center gap-2 px-4 py-2 text-white transition-all duration-300 rounded-r-full shadow-lg bg-azul hover:bg-azul-300 focus:outline-none">
-                        <i class="bi bi-search"></i>
-                        <span>Buscar</span>
+                    <input type="text" id="search-input" name="search" placeholder="Buscar..." class="px-4 py-2 text-gray-800 bg-white rounded-l-full shadow-lg focus:outline-none font-poppins">
+                    <button aria-label="Buscar" type="submit" class="flex items-center justify-center gap-2 px-4 py-2 text-white transition-all duration-300 rounded-r-full shadow-lg bg-azul hover:bg-azul-300 focus:outline-none">
+                      <i class="bi bi-search"></i>
+                      <span>Buscar</span>
                     </button>
                 </form>
             </div>
         </section>
+
+
+        <div id="search-results" class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        </div>
+
+
 
         <!--Sección de Películas disponibles en cines-->
         <section class="px-[2em] mt-[2em]">
@@ -209,6 +213,7 @@
 
     <!--? SCRIPTS -->
     <script type="module" src="script/index.js"></script>
+    <script type="module" src="script/buscador.js"></script>
 </body>
 
 </html>

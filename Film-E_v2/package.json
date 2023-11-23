@@ -22,5 +22,8 @@
     "vite": "^5.0.0"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
 }
