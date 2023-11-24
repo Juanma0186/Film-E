@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*? BOOTSTRAP ICONS*/
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
@@ -68,13 +72,6 @@
     font-weight: bold;
     font-style: italic;
 }
-
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 @layer components {
 
@@ -285,7 +282,6 @@ section>div::-webkit-scrollbar-thumb {
     position: absolute;
     bottom: 50px;
     right: -10px;
-
 }
 
 .circle-bg {
@@ -298,7 +294,6 @@ section>div::-webkit-scrollbar-thumb {
     fill: #223;
     stroke-width: 4;
     stroke-linecap: round;
-    animation: progress 1s ease-out forwards;
 }
 
 @keyframes progress {
