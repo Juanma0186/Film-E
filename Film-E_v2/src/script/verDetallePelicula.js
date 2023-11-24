@@ -19,7 +19,7 @@ export function verDetalle(MOVIE_API_URL) {
               <h2 class="text-3xl font-bold mb-5">${movie.title}</h2>
               <p class="mb-4">${movie.overview}</p>
               <p class="mb-4">Fecha de estreno: ${movie.release_date}</p>
-              <p class="mb-4">Duración: ${movie.runtime} minutos</p>
+              <p class="mb-4">Duración: ${movie.runtime | " "} minutos</p>
               <p class="mb-4">Puntuación: ${movie.vote_average}</p>
               <p class="mb-4">Géneros: ${movie.genres.map((genre) => genre.name).join(", ")}</p>
               <p class="mb-4">Idioma original: ${movie.original_language}</p>
