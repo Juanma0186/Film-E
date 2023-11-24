@@ -22,7 +22,9 @@ export function navItemsHover() {
     item.addEventListener("mouseleave", () => {
       menuBackdrop.style.opacity = "0";
       menuBackdrop.style.visibility = "hidden";
-      activado.classList.add("activado");
+      if (activado) {
+        activado.classList.add("activado");
+      }
     });
   });
 }
