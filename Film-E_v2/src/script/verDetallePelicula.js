@@ -2,6 +2,7 @@ import { IMAGE_URL, API_KEY } from "./config.js";
 import { verTrailer } from "./verTrailer.js";
 import { mostrarModal } from "./mostrarModal.js";
 import { printMovies } from "./printMovie.js";
+import * as utilities from "./utilities.js";
 
 let movieTitle;
 
@@ -9,23 +10,54 @@ export function verDetalle(MOVIE_API_URL) {
   fetch(MOVIE_API_URL)
     .then((response) => response.json())
     .then((movie) => {
+      // Obtenemos el average de la película y lo redondeamos a un porcentaje entero
+      const average = utilities.roundAverage(movie.vote_average);
+      // Cambiar el formato de la fecha
+      const dateObject = new Date(movie.release_date);
+
+      // Obtener día, mes y año
+      const day = dateObject.getDate();
+      const month = dateObject.getMonth() + 1;
+      const year = dateObject.getFullYear();
+      // Crear una cadena con el formato deseado (DD-MM-YYYY)
+      const formattedDate = `${day < 10 ? "0" : ""}${day}-${month < 10 ? "0" : ""}${month}-${year}`;
+
+      const duration = utilities.convertMins(movie.runtime);
+
       movieTitle = movie.title || movie.name;
       const movieDetails = document.getElementById("movieDetails");
       const imageUrl = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : "img/default.jpg";
       movieDetails.innerHTML = `
-          <div class="flex flex-col md:flex-row">
-            <img id="movieImage" class="cursor-pointer w-full md:w-[400px] h-[400px] object-containt rounded-lg mb-5 md:mb-0 md:mr-8" src="${imageUrl}" alt="${movie.title}">
-            <div class="text-azul-100">
-              <h2 class="text-3xl font-bold mb-5">${movie.title}</h2>
-              <p class="mb-4">${movie.overview}</p>
-              <p class="mb-4">Fecha de estreno: ${movie.release_date}</p>
-              <p class="mb-4">Duración: ${movie.runtime | " "} minutos</p>
-              <p class="mb-4">Puntuación: ${movie.vote_average}</p>
-              <p class="mb-4">Géneros: ${movie.genres.map((genre) => genre.name).join(", ")}</p>
-              <p class="mb-4">Idioma original: ${movie.original_language}</p>
-              <button id="trailerButton" class="px-4 py-2  font-bold rounded bg-azul-500 text-blanco-700 hover:bg-azul-300">
-              Ver tráiler
+          <div class="flex flex-col md:flex-row gap-[1em]">
+            <div class="flex-[1] flex items-center justify-center md:max-w-[400px]">
+              <img id="movieImage" class="cursor-pointer w-full h-full aspect-auto object-contain rounded-lg" src="${imageUrl}" alt="${movie.title}">
+            </div>
+            <div class="flex-[2] flex flex-col items-start gap-4 px-4 py-[2em] dark:text-blanco-500 text-xl">
+              <h2 class="text-4xl font-bold mb-5 dark:text-blanco-500">${movie.title}&nbsp;
+              <span class="text-gris-300 dark:text-gris-500 font-normal">(${year})</span></h2>
+              <div class="flex items-center gap-4">
+                <span>Valoración:</span>
+                <div class="relative w-[50px] lg:w-[60px]">
+                  <svg viewBox="0 0 36 36" class="max-w-full ${average >= 70 ? "green" : (average <= 45 ? "red" : "yellow")} max-w-[50px] lg:max-w-[60px]">
+                  <path class="circle" stroke-dasharray="${average}, 100" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                  <text x="18" y="22" class="percentage">${average}</text>
+                </svg>
+                </div>
+              </div>
+              <p>Fecha de estreno: <span class="italic">${formattedDate}</span></p>
+              <p>Duración: <span class="italic">${duration}</p>
+              <p>Géneros: ${movie.genres.map((genre) => genre.name).join(", ")}</p>
+              <p>Idioma original: ${movie.original_language}</p>
+              <p>${movie.overview ? movie.overview : `Sinopsis no disponible para ${movie.title}`}</p>
+              <div class="flex items-center gap-4">
+              <span>Trailer:</span>
+                <button id="trailerButton" class="w-[50px] h-[50px] flex items-center justify-center bg-azul-500 text-blanco-700 hover:bg-azul-300 rounded-full group transition-all duration-300 ease-linear">
+                <span class="bi bi-play text-3xl group-hover:scale-[1.1] translate-x-[2px]"></span>
               </button>
+              </div>
+
             </div>
           </div>
           `;
@@ -40,7 +72,7 @@ export function verDetalle(MOVIE_API_URL) {
         .addEventListener("click", () => verTrailer(movieTitle));
 
       movie.genres.forEach((genre) => {
-        const GENRE_API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre.id}`;
+        const GENRE_API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre.id}&language=es-ES`;
         printMovies(GENRE_API_URL, "cineList"); // Llama a printMovies para cada género
       });
     })

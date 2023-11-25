@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
+    <!--Este script evita que se produzca un flash al cargar el lightmode antes que el darkmode-->
     <script>
         if (localStorage.getItem("dark-mode") === "dark" || (!("dark-mode" in localStorage))) {
             document.documentElement.classList.add("dark");
@@ -15,11 +16,11 @@
     <title>Film-E</title>
 </head>
 
-<body class="transition-all duration-300 ease-linear font-poppins">
+<body class="font-poppins">
 
     <!--? HEADER -->
-    <header class="">
-        <nav class="bg-blanco-500 dark:bg-[#222] transition-all duration-0 ease-linear">
+    <header>
+        <nav class="transition-all duration-300 ease-linear bg-blanco-500 dark:bg-negro-500">
             <div
                 class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10 animate-fade-down animate-duration-[2000ms] animate-ease-out ">
                 <div class="flex items-center flex-shrink-0">
@@ -93,7 +94,7 @@
     <!--? FIN HEADER -->
 
     <!--? MAIN -->
-    <main class="dark:bg-[#222] transition-all ease-linear duration-300">
+    <main class="transition-all duration-300 ease-linear dark:bg-gris-100">
 
         <!-- BACK-TO-TOP-->
         <div id="back-to-top" class="fixed bottom-0 right-0 z-10 mb-4 mr-4 overflow-hidden rounded-full group">

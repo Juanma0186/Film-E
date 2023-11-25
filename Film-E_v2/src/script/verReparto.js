@@ -32,7 +32,7 @@ export function verReparto(CAST_API_URL, list) {
           "whitespace-nowrap"
         );
         // Si el miembro del reparto no tiene una imagen disponible, usamos una imagen por defecto
-        const imageUrl = member.profile_path ? `${IMAGE_URL}${member.profile_path}` : "img/default.jpg";
+        const imageUrl = member.profile_path ? `${IMAGE_URL}${member.profile_path}` : "img/default.png";
         castMember.innerHTML = `
                   <div class="flex flex-col items-center">
                       <img id="imagen${member.cast_id}" class="rounded-lg w-full" src="${imageUrl}" alt="${member.name}">

@@ -294,6 +294,7 @@ section>div::-webkit-scrollbar-thumb {
     fill: #223;
     stroke-width: 4;
     stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
 }
 
 @keyframes progress {
@@ -302,15 +303,15 @@ section>div::-webkit-scrollbar-thumb {
     }
 }
 
-.circular-chart.red .circle {
+.red .circle {
     stroke: theme("colors.rojo.500");
 }
 
-.circular-chart.yellow .circle {
+.yellow .circle {
     stroke: theme("colors.amarillo.500");
 }
 
-.circular-chart.green .circle {
+.green .circle {
     stroke: theme("colors.verde.500");
 }
 
