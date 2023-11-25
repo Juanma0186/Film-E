@@ -12,4 +12,11 @@ export function toggleDarkMode() {
       localStorage.setItem("dark-mode", "light");
     }
   });
+
+  // Obtenemos el modo actual para el botón
+  if (localStorage.getItem("dark-mode") === "dark") {
+    btnSwitch.classList.add("active");
+  } else {
+    btnSwitch.classList.remove("active");
+  }
 }
