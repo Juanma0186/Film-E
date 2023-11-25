@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
+    <script>
+        if (localStorage.getItem("dark-mode") === "dark" || (!("dark-mode" in localStorage))) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
     <title>Film-E</title>
 </head>
 
@@ -12,7 +19,7 @@
 
     <!--? HEADER -->
     <header class="">
-        <nav class="bg-blanco-500 dark:bg-[#222] transition-all duration-300 ease-linear ">
+        <nav class="bg-blanco-500 dark:bg-[#222] transition-all duration-0 ease-linear">
             <div
                 class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10 animate-fade-down animate-duration-[2000ms] animate-ease-out ">
                 <div class="flex items-center flex-shrink-0">
@@ -209,8 +216,9 @@
     <!--? FIN FOOTER -->
 
     <!--? SCRIPTS -->
-    <script type="module" src="script/index.js"></script>
+
     <script type="module" src="script/buscador.js"></script>
+    <script type="module" src="/script/index.js"></script>
 </body>
 
 </html>
