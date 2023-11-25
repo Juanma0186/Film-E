@@ -9,7 +9,7 @@ export function verDetalle(MOVIE_API_URL) {
   fetch(MOVIE_API_URL)
     .then((response) => response.json())
     .then((movie) => {
-      movieTitle = movie.title | movie.name;
+      movieTitle = movie.title || movie.name;
       const movieDetails = document.getElementById("movieDetails");
       const imageUrl = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : "img/default.jpg";
       movieDetails.innerHTML = `
