@@ -14,3 +14,4 @@ export const serieId = new URLSearchParams(window.location.search).get("id");
 export const SERIE_API_URL = `https://api.themoviedb.org/3/tv/${serieId}?api_key=${API_KEY}&language=es-ES`;
 export const SERIE_CAST_API_URL = `https://api.themoviedb.org/3/tv/${serieId}/credits?api_key=${API_KEY}&language=es-ES`;
 export const GENRE_SERIES_API_URL_ = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_genres=${movieId}`;
+export const TV_REVIEW_API_URL = `https://api.themoviedb.org/3/tv/${serieId}/reviews?api_key=${API_KEY}&language=en-`;

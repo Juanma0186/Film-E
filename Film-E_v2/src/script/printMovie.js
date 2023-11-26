@@ -6,9 +6,15 @@ export function printMovies(API_URL, list, isActor = false) {
     .then((data) => {
       const movieList = document.getElementById(list);
       const movies = isActor ? data.cast : data.results; // Si es actor, usamos data.cast. Si no, usamos data.results
+
+      if (movies.length === 0) {
+        movieList.innerHTML = "<p class='text-2xl text-gris-300 font-bold' >No hay películas para este actor.</p>";
+        return;
+      }
+
       movies.forEach((movie) => {
         // Cambiar el formato de la fecha
-        const dateObject = new Date(movie.release_date);
+        const dateObject = new Date(movie.release_date ? movie.release_date : movie.first_air_date);
 
         // Obtener día, mes y año
         const day = dateObject.getDate();
@@ -21,7 +27,9 @@ export function printMovies(API_URL, list, isActor = false) {
 
         // Crear un elemento <a> para cada película con su correspondiente href para el detalle
         const movieItem = document.createElement("a");
-        movieItem.href = `./detallePelicula.html?id=${movie.id}`;
+        movieItem.href = movie.release_date
+          ? `./detallePelicula.html?id=${movie.id}`
+          : `./detalleSerie.html?id=${movie.id}`;
         movieItem.classList.add(
           "relative",
           "w-32",
@@ -52,8 +60,9 @@ export function printMovies(API_URL, list, isActor = false) {
           </div>
           <div class="mt-2">
           <div class="w-full h-full overflow-hidden">  
-            <p class=" text-lg text-center ${movie.title.length > 17 ? "moving-text" : ""}" style="${movie.title.length > 17 ? `--animation-duration: ${movie.title.length * 0.2}s` : ""}">${movie.title}</p>
+            <p class="text-lg text-center ${movie.title ? (movie.title.length > 17 ? "moving-text" : "") : (movie.name.length > 17 ? "moving-text" : "")}" style="${movie.title ? (movie.title.length > 17 ? `--animation-duration: ${movie.title.length * 0.2}s` : "") : (movie.name.length > 17 ? `--animation-duration: ${movie.name.length * 0.2}s` : "")}">${movie.title || movie.name}</p>
           </div>
+      
           <p class="text-sm text-center text-gris-300">${formattedDate}</p>
           </div>
           

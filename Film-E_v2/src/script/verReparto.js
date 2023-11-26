@@ -46,7 +46,7 @@ export function verReparto(CAST_API_URL, list) {
         document
           .getElementById(`imagen${member.cast_id}`)
           .addEventListener("click", () => {
-            window.location.href = `detalleActor.html?id=${member.id}`;
+            window.location.href = `detalleActor.html?id=${member.id}-${member.name}`;
           });
       });
     })

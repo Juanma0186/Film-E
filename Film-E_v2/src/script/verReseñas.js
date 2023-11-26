@@ -15,6 +15,7 @@ export function verReseñas(REVIEWS_API_URL, list) {
         return;
       }
       const createReviewItem = (review, index) => {
+        traducirTexto(review.content, "es", "claveAPI");
         const reviewItem = document.createElement("div");
         reviewItem.classList.add(
           "w-full",
@@ -24,7 +25,7 @@ export function verReseñas(REVIEWS_API_URL, list) {
           "shadow-md",
           "bg-azul-900",
           "rounded-lg"
-        ); // Añade las clases de Tailwind para el estilo del card
+        );
         reviewItem.innerHTML = `
             <h3 class="font-bold text-lg ">Una reseña de <span class="italic capitalize ">${review.author} </span></h3>
             <p class=" font-bold ">${review.author_details.rating} ⭐</p>
@@ -78,4 +79,17 @@ export function verReseñas(REVIEWS_API_URL, list) {
       updateReview(reviewIndex);
     })
     .catch((error) => console.error("Error:", error));
+}
+
+function traducirTexto(texto, idiomaDestino, claveAPI) {
+  // URL de la API de traducción
+  const url = `https://api.traduccion.ejemplo/v1?texto=${encodeURIComponent(texto)}&idiomaDestino=${idiomaDestino}`;
+
+  return fetch(url, {
+    headers: {
+      Authorization: `Bearer ${claveAPI}`
+    }
+  })
+    .then(response => response.json())
+    .then(data => data.traduccion);
 }
