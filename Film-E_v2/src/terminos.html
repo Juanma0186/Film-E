@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <!--Este script evita que se produzca un flash al cargar el lightmode antes que el darkmode-->
+    <script>
+        if (localStorage.getItem("dark-mode") === "dark" || (!("dark-mode" in localStorage))) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+    <title>Film-E</title>
+    <style>
+        li {
+            /*Propiedad nueva que no funciona en todos los navegadores*/
+            text-wrap: pretty;
+        }
+    </style>
+</head>
+
+<body class="font-roboto">
+
+    <!--? HEADER -->
+    <header>
+        <nav class="transition-all duration-300 ease-linear bg-blanco-500 dark:bg-negro-500">
+            <div
+                class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10 animate-fade-down animate-duration-[2000ms] animate-ease-out ">
+                <div class="flex items-center flex-shrink-0">
+                    <a href="index.html" class="block h-full text-4xl font-bold rounded-lg text-azul-500 hover:italic"
+                        aria-current="page">
+                        FILM<span class="text-verde-500">-</span><span class="text-rojo-500">E</span>
+                    </a>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center sm:justify-center nav-items">
+                    <button class="switch" id="switch" aria-label="darkMode button">
+                        <span><i class="bi bi-sun-fill"></i></span>
+                        <span><i class="text-lg bi bi-moon-fill"></i></span>
+                    </button>
+                    <a href="#"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white ">Pelis</a>
+                    <a href="detalleSerie.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Series</a>
+                    <a href="#"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Anime</a>
+                    <a href="#"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Únete</a>
+                </div>
+
+                <!--BACKDROP-->
+                <div id="menu-backdrop"
+                    class="absolute bg-azul-500 rounded-lg left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10">
+                </div>
+
+                <div class="flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button" id="mobile-menu-btn"
+                        class="relative inline-flex items-center justify-center p-2 rounded-md text-azul-500 hover:bg-azul-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-azul-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="mobile button">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <!--
+                            Icon when menu is closed.
+        
+                            Menu open: "hidden", Menu closed: "block"
+                            -->
+                        <svg class="block w-6 h-6 border" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+
+                        <svg class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu" style="display: none;">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Pelis</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Series</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Anime</a>
+                    <a href="#"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Únete</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--? FIN HEADER -->
+
+    <!--? MAIN -->
+    <main class="mt-[2em] mb-5 transition-all duration-300 ease-linear dark:bg-gris-100">
+
+        <section class="flex flex-col items-start gap-3 justify-start w-[70%] min-h-[80vh] mx-auto md:px-[5%] py-[1em]">
+            <h1 class="self-center mb-4 text-4xl font-bold text-center underline font-poppins">Términos y Condiciones
+            </h1>
+            <p>
+                Por favor, lee <b class="font-bold">detenidamente</b> los Términos y Condiciones de Uso antes
+                de Film-E. Al acceder o utilizar esta web, aceptas cumplir con estos términos y
+                condiciones. Si no estás
+                de acuerdo con alguno de los términos aquí establecidos, por favor, no utilices este sitio web.
+            </p>
+            <ul class="flex flex-col gap-5">
+                <li>
+                    <h2 class="mb-2 text-xl font-semibold font-poppins">Uso de la Web</h2>
+                    <ul class="pl-[2em] list-disc flex flex-col gap-2 ">
+                        <li>
+                            El Sitio proporciona servicios de búsqueda de información sobre películas, series y
+                            animación con su respectivo reparto, sinopsis, trailer, etc.
+                        </li>
+                        <li>
+                            El contenido de este sitio web forma parte de un proyecto de 2º de DAW y sus fines son
+                            informativos y de entretenimiento.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="mb-2 text-xl font-semibold font-poppins">Registro</h2>
+                    <ul class="pl-[2em] list-disc flex flex-col gap-2">
+                        <li>
+                            Algunas funciones del Sitio pueden requerir el registro del usuario. La información
+                            proporcionada debe ser precisa y
+                            actualizada.
+                        </li>
+                        <li>
+                            Eres responsable de mantener la confidencialidad de tu información de registro.
+                        </li>
+                        <li>
+                            Eres responsable de todas las actividades que se produzcan bajo tu nombre de usuario y
+                            contraseña.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="mb-2 text-xl font-semibold font-poppins">Contenido</h2>
+                    <ul class="pl-[2em] list-disc flex flex-col gap-2">
+                        <li>
+                            La web puede contener enlaces a sitios web de terceros. No tenemos control sobre el
+                            contenido de estos sitios y no
+                            asumimos responsabilidad por ellos.
+                        </li>
+                        <li>
+                            La información proporcionada por esta web no es recogida por nosotros, sino que es
+                            proporcionada por una API externa, por lo que no nos hacemos responsables de la
+                            veracidad de la misma.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="mb-2 text-xl font-semibold font-poppins">Propiedad Intelectual</h2>
+                    <ul class="pl-[2em] list-disc flex flex-col gap-2">
+                        <li>
+                            Todo el contenido en el Sitio, incluyendo pero no limitado a textos, imágenes, logotipos, y
+                            software, está protegido por
+                            derechos de propiedad intelectual.
+                        </li>
+                        <li>
+                            No puedes reproducir, distribuir, modificar, transmitir, o utilizar el contenido sin nuestro
+                            consentimiento expreso por
+                            escrito.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="mb-2 text-xl font-semibold font-poppins">Modificaciones</h2>
+                    <ul class="pl-[2em] list-disc flex flex-col gap-2">
+                        <li>
+                            Nos reservamos el derecho de modificar los Términos y Condiciones de Uso en cualquier
+                            momento. Por favor, revísalos
+                            periódicamente.
+                        </li>
+                        <li>
+                            Si continúas utilizando el Sitio después de que hayamos publicado cambios en los Términos y
+                            Condiciones de Uso, significa
+                            que aceptas los términos modificados.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="mb-2 text-xl font-semibold font-poppins">Ley Aplicable</h2>
+                    <ul class="pl-[2em] list-disc flex flex-col gap-2">
+                        <li>
+                            Estos Términos y Condiciones de Uso se rigen por las leyes de España.
+                        </li>
+                        <li>
+                            Cualquier controversia que surja de la interpretación o ejecución de los Términos y
+                            Condiciones de Uso será sometida a los tribunales de la ciudad de Madrid.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="mb-2 text-xl font-semibold font-poppins">Contacto</h2>
+                    <ul class="pl-[2em] list-disc flex flex-col gap-2">
+                        <li>
+                            Si encuentras algún error o alguna duda,por favor, sobre los Términos y Condiciones de Uso,
+                            por favor, ponte en <a class="font-bold underline hover:text-azul-500"
+                                href="contacto.html">contacto</a> con
+                            nosotros.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </section>
+
+    </main>
+    <!--? FIN MAIN -->
+
+    <!--? FOOTER -->
+    <footer class="p-6 bg-negro-500">
+        <div
+            class="flex flex-col items-center justify-start w-full gap-6 mt-4 sm:gap-2 sm:justify-around sm:items-center sm:flex-row">
+            <div class="flex flex-col items-center justify-center gap-2 w-fit ">
+                <a href="index.html"
+                    class="block h-full p-2 text-4xl font-bold rounded-lg text-azul-500 hover:italic bg-blanco-500"
+                    aria-current="page">
+                    FILM<span class="text-verde-500">-</span><span class="text-rojo-500">E</span>
+                </a>
+                <p class="text-sm text-white">
+                    © 2023 Film-E.
+                </p>
+            </div>
+            <div class="flex flex-col items-start justify-center w-[100px]">
+                <a href="#" class="text-white hover:underline">About Us</a>
+                <a href="#" class="text-white hover:underline">Soporte</a>
+                <a href="#" class="text-white hover:underline">Sugerencias</a>
+            </div>
+            <div class="flex flex-col items-start justify-center w-[100px]">
+                <a href="terminos.html" class="text-white hover:underline">Términos</a>
+                <a href="#" class="text-white hover:underline">Política</a>
+                <a href="#" class="text-white hover:underline">Recursos</a>
+            </div>
+        </div>
+    </footer>
+    <!--? FIN FOOTER -->
+
+    <!--? SCRIPTS -->
+    <script src="./script/navbar.js"></script>
+</body>
+
+</html>
