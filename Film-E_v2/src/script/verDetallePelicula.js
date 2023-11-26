@@ -33,9 +33,9 @@ export function verDetalle(MOVIE_API_URL) {
               <img id="movieImage" class="cursor-pointer w-full h-full aspect-auto object-contain rounded-lg" src="${imageUrl}" alt="${movie.title}">
             </div>
             <div class="flex-[2] flex flex-col items-start gap-2 px-4 py-[2em] dark:text-blanco-500 text-xl">
-              <h2 class="text-4xl font-bold dark:text-blanco-500">${movie.title}&nbsp;
+              <h2 class="text-4xl font-bold dark:text-blanco-500 font-poppins">${movie.title}&nbsp;
               <span class="text-gris-300 dark:text-gris-500 font-normal">(${year})</span></h2>
-              <p class="flex flex-row items-center justify-center flex-wrap gap-4 my-2">${movie.genres.map((genre) => `<span class="p-2 bg-azul-500 text-blanco-500 rounded-[20px] text-sm cursor-pointer ">${genre.name}</span>`).join("")}</p>
+              <p class="flex flex-row items-center justify-center flex-wrap gap-4 my-2">${movie.genres.map((genre) => `<span class="p-2 bg-azul-400 text-blanco-500 rounded-[20px] text-xs cursor-pointer font-bold uppercase">${genre.name}</span>`).join("")}</p>
 
               <div class="flex items-center gap-4">
                 <div class="relative w-[50px] lg:w-[60px]">
@@ -49,7 +49,7 @@ export function verDetalle(MOVIE_API_URL) {
               </div>
               <p>Fecha de estreno: <span class="italic">${formattedDate}</span></p>
               <p>Duración: <span class="italic">${duration}</p>
-              <p class="flex items-center justify-center">Idioma original:&nbsp; <img class="w-[35px] h-[35px] rounded-full" src="/img/flags/${movie.original_language}.webp" alt="${movie.original_language}"><span class="uppercase">&nbsp;${movie.original_language}</span></p>
+              <p class="flex items-center justify-center" title="${movie.original_language}">Idioma original:&nbsp; <img class="w-[35px] h-[35px] rounded-full" src="/img/flags/${movie.original_language}.webp" alt="${movie.original_language}"><span class="uppercase font-bold">&nbsp;${movie.original_language}</span></p>
               </p>
               <p><span class="underline">Sinopsis:</span><br/><span class="text-lg">${movie.overview ? movie.overview : "<b>[No disponible]</b>"}</span></p>
               <div class="flex items-center gap-4 mt-5  ">
