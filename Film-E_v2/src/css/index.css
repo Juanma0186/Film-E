@@ -234,7 +234,7 @@ section>div::-webkit-scrollbar-thumb {
 .switch {
     background: theme("colors.negro.500");
     border-radius: 1000px;
-    border: none;
+    border: 2px solid theme("colors.negro.500");
     position: relative;
     cursor: pointer;
     display: flex;
@@ -253,13 +253,14 @@ section>div::-webkit-scrollbar-thumb {
     left: 0;
     right: unset;
     border-radius: 50%;
-    border: 2px solid theme("colors.negro.500");
+    border: 2px solid theme("colors.blanco.500");
     transition: .3s ease all;
 }
 
 .switch.active {
     background: theme("colors.yellow.500");
     color: theme("colors.negro.500");
+    border-color: theme("colors.blanco.500")
 }
 
 .switch.active::after {
