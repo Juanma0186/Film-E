@@ -36,7 +36,7 @@ export function verReparto(CAST_API_URL, list) {
         castMember.innerHTML = `
                   <div class="flex flex-col items-center">
                       <img id="imagen${member.cast_id}" class="rounded-lg w-full" src="${imageUrl}" alt="${member.name}">
-                      <p class="text-lg text-center font-bold   ">${member.character} </p>
+                      <p class="text-lg text-center font-bold dark:text-blanco-500">${member.character} </p>
                       <p class="text-sm text-center font-bold text-gris-300 ">${member.name} </p>
                   </div>
               `;

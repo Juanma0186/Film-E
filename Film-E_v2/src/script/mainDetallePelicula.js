@@ -14,10 +14,6 @@ document.getElementById("trailerModal").addEventListener("click", () => {
   document.getElementById("trailerContainer").innerHTML = "";
 });
 
-document.getElementById("backButton").addEventListener("click", () => {
-  window.location.href = "index.html";
-});
-
 document.getElementById("imageModal").addEventListener("click", () => {
   document.getElementById("imageModal").classList.add("hidden");
 });
