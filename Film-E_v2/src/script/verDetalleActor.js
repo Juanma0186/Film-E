@@ -6,7 +6,7 @@ export function verDetalleActor(ACTOR_API_URL) {
     .then((response) => response.json())
     .then((actor) => {
       const actorDetails = document.getElementById("actorDetails");
-      const imageUrl = actor.profile_path ? `${IMAGE_URL}${actor.profile_path}` : "img/default.jpg";
+      const imageUrl = actor.profile_path ? `${IMAGE_URL}${actor.profile_path}` : "img/default.webp";
       const actorName = actor.name || "Sin nombre";
       const actorBiography = actor.biography || "Sin biografía";
       const actorBirthday = actor.birthday || "Sin fecha de nacimiento";

@@ -34,7 +34,11 @@ searchInput.on("input", debounce(() => {
           imageElement.addClass("w-[100px]", "h-[150px]", "object-cover", "rounded", "my-2", "text-center");
 
           imageElement.on("error", () => {
-            imageElement.attr("src", "img/default.jpg");
+            if (result.media_type === "movie") {
+              imageElement.attr("src", "img/default-peli.webp");
+            } else {
+              imageElement.attr("src", "img/default-serie.webp");
+            }
           });
 
           resultElement.append(mediaType);

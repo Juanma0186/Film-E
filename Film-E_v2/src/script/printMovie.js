@@ -21,9 +21,7 @@ export function printMovies(API_URL, list, isActor = false) {
         const month = dateObject.getMonth() + 1;
         const year = dateObject.getFullYear();
         // Crear una cadena con el formato deseado (DD-MM-YYYY)
-        const formattedDate = `${day < 10 ? "0" : ""}${day}-${
-          month < 10 ? "0" : ""
-        }${month}-${year}`;
+        const formattedDate = `${day < 10 ? "0" : ""}${day}-${month < 10 ? "0" : ""}${month}-${year}`;
 
         // Crear un elemento <a> para cada película con su correspondiente href para el detalle
         const movieItem = document.createElement("a");
@@ -46,7 +44,7 @@ export function printMovies(API_URL, list, isActor = false) {
         // Obtenemos el average de la película y lo redondeamos a un porcentaje entero
         const average = Math.round(movie.vote_average * 10);
         // Si la película no tiene una imagen disponible, usamos una imagen por defecto
-        const imageUrl = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : "img/default.jpg";
+        const imageUrl = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : "img/default-peli.webp";
         movieItem.innerHTML = `
           
           <div class="w-full">
