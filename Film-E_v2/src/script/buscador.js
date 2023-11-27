@@ -69,6 +69,15 @@ searchInput.on("input", debounce(() => {
   });
 }, 100));
 
+// Hacemos que el div de resultados de búsqueda se cierre al hacer click fuera de él y se vacíe al cerrarse
+// También limpiamos el input de búsqueda
+$(document).on("click", (event) => {
+  if (!event.target.closest("#search-results")) {
+    searchResults.html("");
+    document.getElementById("search-input").value = "";
+  }
+});
+
 // TODO: https://www.freecodecamp.org/espanol/news/curso-debounce-javascript-como-hacer-que-tu-js-espere/
 function debounce(func, wait) {
   let timeout;
