@@ -114,7 +114,8 @@
                 <h1 class="mb-3 text-6xl text-blanco">¡Bienvenido a Film-E!</h1>
                 <p class="mb-5 text-2xl ">¿Necesitas información? ¡Explora!</p>
                 <form action="#" method="GET" class="z-30 flex items-center justify-center">
-                    <input type="text" id="search-input" name="search" placeholder="Buscar..."
+                    <input type="text" id="search-input" name="search" placeholder="Buscar..." autocomplete="off"
+                        spellcheck="false"
                         class="px-4 py-2 text-gray-800 rounded-l-full shadow-lg bg-blanco-500 focus:outline-none font-poppins">
                     <button aria-label="Buscar" type="submit"
                         class="flex items-center justify-center gap-2 px-4 py-2 text-white transition-all duration-300 rounded-r-full shadow-lg bg-azul hover:bg-azul-300 focus:outline-none">
@@ -124,7 +125,7 @@
                 </form>
                 <div class="absolute inset-0 flex items-center justify-center ">
                     <div id="search-results"
-                        class="w-fit max-w-[90%] sm:max-w-[50%] max-h-[500px] p-4 rounded-lg bg-blanco-500 absolute top-2/3 xl: sm:-translate-y-10 -translate-y-0">
+                        class="w-fit flex flex-col gap-2 max-w-[90%] sm:max-w-[50%] max-h-[500px] p-4 rounded-lg bg-blanco-500 absolute top-2/3 xl: sm:-translate-y-10 -translate-y-0 overflow-auto border-[2px] border-azul-500 dark:bg-gris-100">
                     </div>
                 </div>
             </div>

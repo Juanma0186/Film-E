@@ -200,6 +200,17 @@ section>div::-webkit-scrollbar-thumb {
     background: theme("colors.azul.500");
 }
 
+#search-results::-webkit-scrollbar-thumb {
+    background: theme("colors.azul.700");
+}
+
+.dark #search-results::-webkit-scrollbar-thumb {
+    background: theme("colors.azul.500");
+}
+
+
+
+
 /*? MOVING TEXT */
 @keyframes marquee {
     0% {
