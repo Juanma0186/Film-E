@@ -107,28 +107,28 @@
 
         <!--Sección del Hero-->
         <section
-            class="relative h-[calc(100vh-5rem)] bg-center bg-cover bg-[url('/img/hero-light.webp')] dark:bg-[url('/img/hero-dark.webp')] transition-all duration-300 ease-linear">
+            class="relative z-20 h-[calc(100vh-5rem)] bg-left lg:bg-center bg-cover bg-[url('/img/hero-light.webp')] dark:bg-[url('/img/hero-dark.webp')] transition-all duration-300 ease-linear">
             <div class="absolute inset-0 bg-black opacity-40"></div>
             <div
                 class="absolute inset-0 flex flex-col items-center justify-center text-center text-white animate-fade-up animate-duration-[2000ms] animate-ease-out">
                 <h1 class="mb-3 text-6xl text-blanco">¡Bienvenido a Film-E!</h1>
                 <p class="mb-5 text-2xl ">¿Necesitas información? ¡Explora!</p>
-                <form action="#" method="GET" class="flex items-center justify-center">
+                <form action="#" method="GET" class="z-30 flex items-center justify-center">
                     <input type="text" id="search-input" name="search" placeholder="Buscar..."
-                        class="px-4 py-2 text-gray-800 bg-white rounded-l-full shadow-lg focus:outline-none font-poppins">
+                        class="px-4 py-2 text-gray-800 rounded-l-full shadow-lg bg-blanco-500 focus:outline-none font-poppins">
                     <button aria-label="Buscar" type="submit"
                         class="flex items-center justify-center gap-2 px-4 py-2 text-white transition-all duration-300 rounded-r-full shadow-lg bg-azul hover:bg-azul-300 focus:outline-none">
                         <i class="bi bi-search"></i>
                         <span>Buscar</span>
                     </button>
                 </form>
+                <div class="absolute inset-0 flex items-center justify-center ">
+                    <div id="search-results"
+                        class="w-fit max-w-[90%] sm:max-w-[50%] max-h-[500px] p-4 rounded-lg bg-blanco-500 absolute top-2/3 xl: sm:-translate-y-10 -translate-y-0">
+                    </div>
+                </div>
             </div>
         </section>
-
-
-        <div id="search-results" class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        </div>
-
 
 
         <!--Sección de Películas disponibles en cines-->
