@@ -10,6 +10,7 @@ searchInput.on("input", debounce(() => {
 
   if (query.length < 2) {
     searchResults.html("");
+    searchResults.addClass("hidden");
     return;
   }
   $.ajax({
@@ -18,6 +19,10 @@ searchInput.on("input", debounce(() => {
       const results = data.results;
       // console.log(results);
       searchResults.html("");
+
+      if (results.length !== 0) {
+        searchResults.removeClass("hidden");
+      }
 
       if (results.length === 0) {
         const messageElement = $("<p>").text("No se encontraron resultados de búsqueda.");
