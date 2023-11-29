@@ -31,7 +31,7 @@ export function verDetalle(MOVIE_API_URL) {
 
       movieTitle = movie.title;
       const movieDetails = document.getElementById("movieDetails");
-      const imageUrl = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : "img/default.jpg";
+      const imageUrl = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : "img/default-peli.webp";
       movieDetails.innerHTML = `
           <div class="flex flex-col md:flex-row gap-[1em]">
             <div class="flex-[1-1-400px] flex items-center justify-center md:max-w-[400px]">

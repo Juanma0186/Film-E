@@ -12,3 +12,15 @@ export function convertMins(minutos) {
   // Devolver horas y minutos si hay horas, si no, solo minutos
   return horas ? `${horas}h ${minutosRestantes}min` : `${minutosRestantes}min`;
 }
+
+// Funcion para formatear la fecha
+export function formatDate(date) {
+  const dateObject = new Date(date);
+
+  // Obtener día, mes y año
+  const day = dateObject.getDate();
+  const month = dateObject.getMonth() + 1;
+  const year = dateObject.getFullYear();
+  // Crear una cadena con el formato deseado (DD-MM-YYYY)
+  return `${day < 10 ? "0" : ""}${day}-${month < 10 ? "0" : ""}${month}-${year}`;
+}

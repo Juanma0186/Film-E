@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de la Película</title>
     <link rel="stylesheet" href="/css/index.css">
+    <!--Este script evita que se produzca un flash al cargar el lightmode antes que el darkmode-->
+    <script>
+        if (localStorage.getItem("dark-mode") === "dark" || (!("dark-mode" in localStorage))) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+    <title>Film-E | About Us</title>
+    <style>
+        li {
+            /*Propiedad nueva que no funciona en todos los navegadores*/
+            text-wrap: pretty;
+        }
+    </style>
 </head>
 
-<body class="font-poppins">
+<body class="font-roboto">
 
     <!--? HEADER -->
     <header>
@@ -27,9 +41,9 @@
                         <span><i class="text-lg bi bi-moon-fill"></i></span>
                     </button>
                     <a href="#"
-                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Pelis</a>
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white ">Pelis</a>
                     <a href="detalleSerie.html"
-                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white activado">Series</a>
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Series</a>
                     <a href="#"
                         class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Anime</a>
                     <a href="#"
@@ -49,10 +63,10 @@
                         <span class="absolute -inset-0.5"></span>
                         <span class="sr-only">Open main menu</span>
                         <!--
-                                Icon when menu is closed.
-            
-                                Menu open: "hidden", Menu closed: "block"
-                                -->
+                            Icon when menu is closed.
+        
+                            Menu open: "hidden", Menu closed: "block"
+                            -->
                         <svg class="block w-6 h-6 border" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -86,55 +100,88 @@
     <!--? FIN HEADER -->
 
     <!--? MAIN -->
-    <main class="dark:bg-[#222] transition-all ease-linear duration-300">
+    <main class="pt-[2em] pb-5 transition-all duration-300 ease-linear dark:bg-gris-100">
 
         <!-- BACK-TO-TOP-->
         <div id="back-to-top" class="fixed bottom-0 right-0 z-10 mb-4 mr-4 overflow-hidden rounded-full group">
             <button aria-label="Back to top"
-                class="items-center justify-center hidden w-12 h-12 text-white transition-all duration-300 ease-linear opacity-0 bg-azul-500 hover:bg-azul-300 focus:outline-none"
+                class="items-center justify-center w-12 h-12 text-white transition-all duration-300 ease-linear opacity-0 bg-azul-500 hover:bg-azul-300 focus:outline-none"
                 id="toTop">
                 <i class="text-2xl font-bold bi bi-caret-up group-hover:scale-[1.1] transition-all duration-300"></i>
             </button>
         </div>
 
-        <section class="px-[2em] pt-[2em] ">
-            <div id="movieDetails" class="flex flex-col p-5 rounded-md shadow-md bg-blanco-700 md:flex-row"></div>
-        </section>
+        <section
+            class="flex flex-col items-start gap-3 justify-start w-[70%] min-h-[80vh] mx-auto md:px-[5%] py-[1em] dark:text-blanco-500">
+            <h1 class="self-center mb-4 text-4xl font-bold text-center underline font-poppins">
+                About Us
+            </h1>
+            <p class="mb-4">
+                Este proyecto ha sido realizado por los alumnos de 2º de DAW del IES Juan de la Cierva. Hemos colaborado
+                juntos para crear una web dinámica y atractiva para los usuarios, utilizando las tecnologías mostradas
+                en el apartado de <a href="recursos.html"
+                    class="text-lg font-bold underline hover:text-azul-500">Recursos</a>
+                . A continuación, se muestra la información de contacto de cada uno de los integrantes del grupo.
+            </p>
+            <!--INTEGRANTES-->
+            <div class="flex flex-col items-center justify-center w-full gap-4 md:flex-row md:mt-[3em]">
+                <!--INTEGRANTE 1-->
+                <div
+                    class="flex flex-col items-center justify-center gap-2 w-[300px] h-[400px] transition-all duration-300 ease-linear bg-blanco-500 dark:bg-gris-200 p-[1em] md:p-[2em] rounded-lg">
+                    <div class="w-[200px] h-[200px] ">
+                        <img src="https://avatars.githubusercontent.com/u/87316519?v=4"
+                            alt="Imagen de usuario de Juanma0186"
+                            class="w-full h-full aspect-[1/1] rounded-full object-cover">
+                    </div>
+                    <h2 class="text-2xl font-bold text-center font-poppins">Juan Manuel Suárez</h2>
+                    <div class="flex items-center justify-around w-full mt-2">
+                        <a href="https://github.com/Juanma0186" target="_blank">
+                            <i
+                                class="text-4xl transition-all duration-300 ease-linear text-negro-500 hover:text-azul-500 bi bi-github"></i>
+                        </a>
+                        <a href="mailto:juanma0186@filme.com">
+                            <i
+                                class="text-4xl transition-all duration-300 ease-linear text-negro-500 hover:text-azul-500 bi bi-envelope-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/juanma0186">
+                            <i
+                                class="text-4xl transition-all duration-300 ease-linear text-negro-500 hover:text-azul-500 bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <section class="px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500">Reparto principal</h1>
-            <div id="castList" class="flex flex-row pb-5 space-x-4 overflow-x-scroll"></div>
-        </section>
-
-        <section class="px-[2em] mt-[2em] ">
-            <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500 ">Reseñas</h1>
-            <div id="reviewsList" class="flex gap-4 mx-auto  pb-[1em] "></div>
-        </section>
-
-        <section class="px-[2em] mt-[2em]">
-            <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500 ">Recomendaciones</h1>
-            <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em] "></div>
-        </section>
-
-        <button id="backButton" class="px-4 py-2 m-5 font-bold rounded bg-azul-500 text-blanco-700 hover:bg-azul-300">
-            Volver atrás
-        </button>
-
-        <!--TODO: Arreglar modal-->
-        <div id="trailerModal"
-            class="fixed top-0 left-0 items-center justify-center hidden w-full h-screen bg-black bg-opacity-50 ">
-            <div class="w-[75%] h-auto bg-white rounded-lg p-4">
-                <div id="trailerContainer" class="w-full h-full overflow-hidden rounded-lg aspect-video"></div>
+                <!--INTEGRANTE 2-->
+                <div
+                    class="flex flex-col items-center justify-center gap-2 w-[300px] h-[400px] transition-all duration-300 ease-linear bg-blanco-500 dark:bg-gris-200 p-[1em] md:p-[2em] rounded-lg">
+                    <div class="w-[200px] h-[200px] ">
+                        <img src="https://avatars.githubusercontent.com/u/144485381?v=4"
+                            alt="Imagen de usuario de Juanma0186"
+                            class="w-full h-full aspect-[1/1] rounded-full object-cover">
+                    </div>
+                    <!-- TODO: Añadir apellido -->
+                    <h2 class="text-2xl font-bold text-center font-poppins">Miguel Ángel APELLIDO</h2>
+                    <div class="flex items-center justify-around w-full mt-2">
+                        <a href="https://github.com/Angel142330" target="_blank">
+                            <i
+                                class="text-4xl transition-all duration-300 ease-linear text-negro-500 hover:text-azul-500 bi bi-github"></i>
+                        </a>
+                        <a href="mailto:mangel142330@filme.com">
+                            <i
+                                class="text-4xl transition-all duration-300 ease-linear text-negro-500 hover:text-azul-500 bi bi-envelope-fill"></i>
+                        </a>
+                        <!-- TODO: Añadir usuario de instagram -->
+                        <a href="https://www.instagram.com/">
+                            <i
+                                class="text-4xl transition-all duration-300 ease-linear text-negro-500 hover:text-azul-500 bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div id="imageModal"
-            class="fixed top-0 left-0 items-center justify-center hidden w-full h-screen bg-black bg-opacity-50">
-            <div class="h-[80%] w-auto bg-white rounded-lg p-4">
-                <img class="h-full max-w-full rounded-lg as" id="modalImage">
-            </div>
-        </div>
+        </section>
+
     </main>
+    <!--? FIN MAIN -->
 
     <!--? FOOTER -->
     <footer class="p-6 bg-negro-500">
@@ -164,9 +211,9 @@
     </footer>
     <!--? FIN FOOTER -->
 
+    <!--? SCRIPTS -->
+    <script type="module" src="./script/footerElement.js"></script>
 
-
-    <script type="module" src="script/verDetalleSerie.js"></script>
 </body>
 
 </html>
