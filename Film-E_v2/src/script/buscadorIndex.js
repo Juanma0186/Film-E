@@ -1,4 +1,4 @@
-import { SEARCH_API_URL, SEARCH_ALL } from "./config.js";
+import { SEARCH_ALL } from "./config.js";
 import $ from "jquery";
 const searchInput = $("#search-input");
 const searchResults = $("#search-results");
@@ -14,7 +14,7 @@ searchInput.on("input", debounce(() => {
     url: `${SEARCH_ALL}${query}`,
     success: (data) => {
       const results = data.results;
-      console.log(results);
+      // console.log(results);
       searchResults.html("");
 
       if (results.length === 0) {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/index.css">    <title>Buscador de TMDb</title>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container p-4 mx-auto">
+        <div class="w-full p-4 mb-4">
+            <form id="formulario" class="mb-4">
+                <input type="text" id="titulo" placeholder="Título" class="w-full p-2 mb-2 border rounded">
+                <select id="tipo" class="w-full p-2 mb-2 border rounded">
+                    <option value="">Todos</option>
+                    <option value="movie">Películas</option>
+                    <option value="tv">Series</option>
+                </select>
+                <button type="submit" class="w-full p-2 text-white bg-blue-500 rounded">Buscar</button>
+            </form>
+        </div>
+        <div class="flex flex-col md:flex-row">
+            <div class="w-full p-4 md:w-1/4">
+                <div>
+                    <label for="ordenFecha" class="block mb-2">Fecha de lanzamiento:</label>
+                    <select id="ordenFecha" class="w-full p-2 mb-2 border rounded">
+                        <option value="">Sin ordenar</option>
+                        <option value="release_date.asc">Ascendente</option>
+                        <option value="release_date.desc">Descendente</option>
+                    </select>
+                    <label for="ordenPopularidad" class="block mb-2">Popularidad:</label>
+                    <select id="ordenPopularidad" class="w-full p-2 mb-2 border rounded">
+                        <option value="">Sin ordenar</option>
+                        <option value="popularity.asc">Ascendente</option>
+                        <option value="popularity.desc">Descendente</option>
+                    </select>
+                    <label for="ordenTitulo" class="block mb-2">Título:</label>
+                    <select id="ordenTitulo" class="w-full p-2 mb-2 border rounded">
+                        <option value="">Sin ordenar</option>
+                        <option value="title.asc">Ascendente</option>
+                        <option value="title.desc">Descendente</option>
+                    </select>
+                </div>
+            </div>
+            <div id="resultados" class="grid w-full grid-cols-1 gap-4 md:w-3/4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+        </div>
+    </div>
+
+    <script type="module" src="script/buscar.js"></script>
+</body>
+
+</html>
