@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Buscador de Series</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container px-4 mx-auto">
+        <h1 class="my-8 text-4xl">Buscador de Series</h1>
+
+        <div class="flex">
+            <div id="filters" class="w-1/4 pr-4">
+                <h2 class="mb-4 text-2xl">Filtros</h2>
+
+                <div class="mb-4">
+                    <label for="sort_by" class="block mb-2">Ordenar por:</label>
+                    <select id="sort_by" class="block w-full p-2 border rounded">
+                        <option value="">Ninguno</option>
+                        <option value="popularity.desc">Popularidad (descendente)</option>
+                        <option value="popularity.asc">Popularidad (ascendente)</option>
+                        <option value="first_air_date.desc">Fecha de lanzamiento (descendente)</option>
+                        <option value="first_air_date.asc">Fecha de lanzamiento (ascendente)</option>
+                        <option value="vote_average.desc">Valoración (descendente)</option>
+                        <option value="vote_average.asc">Valoración (ascendente)</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 text-center">
+                    <button onclick="searchMovies()" class="px-4 py-2 text-white bg-yellow-500 rounded">Buscar</button>
+                </div>
+                <div id="genres" class="mb-4"></div>
+
+                <div class="mb-4">
+
+                    <button onclick="previousPage()" class="px-4 py-2 ml-2 text-white bg-blue-500 rounded">Página
+                        anterior</button>
+                    <button onclick="nextPage()" class="px-4 py-2 ml-2 text-white bg-blue-500 rounded">Siguiente
+                        página</button>
+                </div>
+            </div>
+
+            <div id="results" class="grid w-3/4 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+        </div>
+    </div>
+
+    <script  src="script/buscarSeries.js"></script>
+</body>
+
+</html>
