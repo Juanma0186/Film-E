@@ -33,7 +33,7 @@ searchInput.on("input", debounce(() => {
         results.forEach((result) => {
           console.log(result);
           /* Creamos el elemento a que contendrá el póster y el título */
-          const resultElement = $("<a>").addClass("flex gap-4 items-center w-fit p-2 bg-blanco-500 dark:bg-gris-100 rounded-lg hover:bg-blanco-400 transition-all duration-200 ease-linear cursor-pointer max-w-[600px]");
+          const resultElement = $("<a>").addClass("flex gap-4 items-center w-fit p-2 bg-blanco-500 dark:bg-gris-100 rounded-lg hover:bg-blanco-400 dark:hover:bg-gris-300 transition-all duration-200 ease-linear cursor-pointer w-full max-w-[600px]");
 
           /* Le asignamos un href en función de si es peli o serieS */
           if (result.media_type === "movie") {
@@ -81,6 +81,7 @@ $(document).on("click", (event) => {
   if (!event.target.closest("#search-results")) {
     searchResults.html("");
     document.getElementById("search-input").value = "";
+    searchResults.addClass("hidden");
   }
 });
 
