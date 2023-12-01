@@ -20,8 +20,9 @@
 
     <!--? HEADER -->
     <header>
-        <nav class="transition-all duration-300 ease-linear shadow-lg bg-blanco-500 dark:bg-negro-500">
-            <div class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10 ">
+        <nav class="transition-all duration-300 ease-linear bg-blanco-500 dark:bg-negro-500">
+            <div
+                class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10 animate-fade-down animate-duration-[2000ms] animate-ease-out ">
                 <div class="flex items-center flex-shrink-0">
                     <a href="index.html" class="block h-full text-4xl font-bold rounded-lg text-azul-500 hover:italic"
                         aria-current="page">
@@ -33,15 +34,12 @@
                         <span><i class="bi bi-sun-fill"></i></span>
                         <span><i class="text-lg bi bi-moon-fill"></i></span>
                     </button>
-                    <a href="peliculas.html"
+                    <a href="buscarPeliculas.html"
                         class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white activado">Pelis</a>
-                    <a href="series.html"
+                    <a href="buscarSeries.html"
                         class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Series</a>
-                    <a href="animacion.html"
-                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Anime</a>
-                    <a href="login.html"
-                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Iniciar
-                        Sesión</a>
+                    <a href="suscripcion.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Únete</a>
                 </div>
 
                 <!--BACKDROP-->
@@ -57,10 +55,10 @@
                         <span class="absolute -inset-0.5"></span>
                         <span class="sr-only">Open main menu</span>
                         <!--
-                                    Icon when menu is closed.
-                
-                                    Menu open: "hidden", Menu closed: "block"
-                                    -->
+                            Icon when menu is closed.
+        
+                            Menu open: "hidden", Menu closed: "block"
+                            -->
                         <svg class="block w-6 h-6 border" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -79,13 +77,11 @@
             <div class="sm:hidden" id="mobile-menu" style="display: none;">
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#"
+                    <a href="buscarPeliculas.html"
                         class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Pelis</a>
-                    <a href="#"
+                    <a href="buscarSeries.html"
                         class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Series</a>
-                    <a href="#"
-                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Anime</a>
-                    <a href="#"
+                    <a href="suscripcion.html"
                         class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Únete</a>
                 </div>
             </div>
