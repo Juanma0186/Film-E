@@ -4,34 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de la Película</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        if (localStorage.getItem("dark-mode") === "dark" || (!("dark-mode" in localStorage))) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+    <title>Detalles de la Película</title>
 </head>
 
 <body class="bg-gray-100">
 
-    <section class="px-[2em] mt-[2em] ">
-        <div id="actorDetails" class="flex flex-col p-5 rounded-md shadow-md bg-blanco-700 md:flex-row"></div>
-    </section>
+    <!--? HEADER -->
+    <header>
+        <nav class="transition-all duration-300 ease-linear bg-blanco-500 dark:bg-negro-500">
+            <div
+                class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10 animate-fade-down animate-duration-[2000ms] animate-ease-out ">
+                <div class="flex items-center flex-shrink-0">
+                    <a href="index.html" class="block h-full text-4xl font-bold rounded-lg text-azul-500 hover:italic"
+                        aria-current="page">
+                        FILM<span class="text-verde-500">-</span><span class="text-rojo-500">E</span>
+                    </a>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center sm:justify-center nav-items">
+                    <button class="switch" id="switch" aria-label="darkMode button">
+                        <span><i class="bi bi-sun-fill"></i></span>
+                        <span><i class="text-lg bi bi-moon-fill"></i></span>
+                    </button>
+                    <a href="buscarPeliculas.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white ">Pelis</a>
+                    <a href="buscarSeries.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Series</a>
+                    <a href="suscripcion.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Únete</a>
+                </div>
 
+                <!--BACKDROP-->
+                <div id="menu-backdrop"
+                    class="absolute bg-azul-500 rounded-lg left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10">
+                </div>
 
-    <section class="px-[2em] mt-[2em]">
-        <h1 class="mb-5 text-4xl italic font-semibold text-wrap ">Películas que participa</h1>
-        <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em] "></div>
-    </section>
+                <div class="flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button" id="mobile-menu-btn"
+                        class="relative inline-flex items-center justify-center p-2 rounded-md text-azul-500 hover:bg-azul-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-azul-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="mobile button">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <!--
+                                Icon when menu is closed.
+            
+                                Menu open: "hidden", Menu closed: "block"
+                                -->
+                        <svg class="block w-6 h-6 border" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
 
-    <button id="backButton" class="px-4 py-2 m-5 font-bold rounded bg-azul-500 text-blanco-700 hover:bg-azul-300">
-        Volver atrás
-    </button>
+                        <svg class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        </button>
+                </div>
+            </div>
 
-    <div id="imageModal"
-        class="fixed top-0 left-0 items-center justify-center hidden w-full h-screen bg-black bg-opacity-50">
-        <div class="h-[80%] w-auto bg-white rounded-lg p-4">
-            <img class="h-full max-w-full rounded-lg as" id="modalImage">
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu" style="display: none;">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="buscarPeliculas.html"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Pelis</a>
+                    <a href="buscarSeries.html"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Series</a>
+                    <a href="suscripcion.html"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Únete</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--? FIN HEADER -->
+
+    <!--? MAIN -->
+    <main class="transition-all duration-300 ease-linear dark:bg-gris-100">
+
+        <!-- BACK-TO-TOP-->
+        <div id="back-to-top" class="fixed bottom-0 right-0 z-10 mb-4 mr-4 overflow-hidden rounded-full group">
+            <button aria-label="Back to top"
+                class="items-center justify-center hidden w-12 h-12 text-white transition-all duration-300 ease-linear opacity-0 bg-azul-500 hover:bg-azul-300 focus:outline-none"
+                id="toTop">
+                <i class="text-2xl font-bold bi bi-caret-up group-hover:scale-[1.1] transition-all duration-300"></i>
+            </button>
         </div>
-    </div>
+
+        <section class="px-[2em] pt-[2em] ">
+            <div id="actorDetails"
+                class="flex flex-col p-5 transition-all duration-300 ease-linear rounded-md shadow-md bg-blanco-500 dark:bg-negro-600 md:flex-row">
+            </div>
+        </section>
+
+
+        <section class="px-[2em] pb-[2em] mt-[2em]">
+            <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500 font-poppins">Películas en las que
+                aparece</h1>
+            <div id="cineList" class="flex gap-4 mx-auto overflow-x-scroll pb-[1em] "></div>
+        </section>
+
+        <div id="imageModal"
+            class="fixed top-0 left-0 items-center justify-center hidden w-full h-screen bg-black bg-opacity-50">
+            <div class="h-[80%] w-auto bg-white rounded-lg p-4">
+                <img class="h-full max-w-full rounded-lg as" id="modalImage">
+            </div>
+        </div>
+
+    </main>
 
     <!--? FOOTER -->
     <footer class="p-6 bg-negro-500">
