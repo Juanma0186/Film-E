@@ -7,7 +7,7 @@ import { navbar } from "./navbar.js";
 
 verDetalle(MOVIE_API_URL);
 verReparto(CAST_API_URL, "castList");
-verReseñas(REVIEWS_API_URL, "reviewsList");
+// verReseñas(REVIEWS_API_URL, "reviewsList");
 
 document.getElementById("trailerModal").addEventListener("click", () => {
   document.getElementById("trailerModal").classList.add("hidden");
