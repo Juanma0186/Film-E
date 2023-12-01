@@ -36,7 +36,7 @@ export function verReparto(CAST_API_URL, list) {
         const imageUrl = member.profile_path ? `${IMAGE_URL}${member.profile_path}` : "img/default.webp";
         castMember.innerHTML = `
                   <div class="flex flex-col items-center">
-                      <img id="imagen${member.cast_id}" class="rounded-lg w-full" src="${imageUrl}" alt="${member.name}">
+                      <img id="imagen${member.cast_id || member.id}" class="rounded-lg w-full" src="${imageUrl}" alt="${member.name}">
                       <p class="text-lg text-center font-bold dark:text-blanco-500 ${(member.character.length > 17 ? "moving-text" : "")}" style="${member.character ? (member.character.length > 17 ? `--animation-duration: ${member.character.length * 0.2}s` : "") : (member.name.length > 17 ? `--animation-duration: ${member.name.length * 0.2}s` : "")}">${member.character} </p>
                       <p class="text-sm text-center font-bold text-gris-300 ${(member.name.length > 17 ? "moving-text" : "")}" style="${member.title ? (member.title.length > 17 ? `--animation-duration: ${member.title.length * 0.2}s` : "") : (member.name.length > 17 ? `--animation-duration: ${member.name.length * 0.2}s` : "")}">${member.name} </p>
                   </div>
@@ -45,7 +45,7 @@ export function verReparto(CAST_API_URL, list) {
       });
       data.cast.slice(0, 10).forEach((member) => {
         document
-          .getElementById(`imagen${member.cast_id}`)
+          .getElementById(`imagen${member.cast_id || member.id}`)
           .addEventListener("click", () => {
             window.location.href = `detalleActor.html?id=${member.id}-${member.name}`;
           });
