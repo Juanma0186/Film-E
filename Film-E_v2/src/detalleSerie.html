@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de la Película</title>
     <link rel="stylesheet" href="/css/index.css">
+    <script>
+        if (localStorage.getItem("dark-mode") === "dark" || (!("dark-mode" in localStorage))) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+    <title>Detalles de la Película</title>
 </head>
 
 <body class="font-poppins">
@@ -26,13 +33,11 @@
                         <span><i class="bi bi-sun-fill"></i></span>
                         <span><i class="text-lg bi bi-moon-fill"></i></span>
                     </button>
-                    <a href="#"
+                    <a href="buscarPeliculas.html"
                         class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Pelis</a>
-                    <a href="detalleSerie.html"
+                    <a href="buscarSeries.html"
                         class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white activado">Series</a>
-                    <a href="#"
-                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Anime</a>
-                    <a href="#"
+                    <a href="suscripcion.html"
                         class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Únete</a>
                 </div>
 
@@ -49,10 +54,10 @@
                         <span class="absolute -inset-0.5"></span>
                         <span class="sr-only">Open main menu</span>
                         <!--
-                                Icon when menu is closed.
-            
-                                Menu open: "hidden", Menu closed: "block"
-                                -->
+                            Icon when menu is closed.
+        
+                            Menu open: "hidden", Menu closed: "block"
+                            -->
                         <svg class="block w-6 h-6 border" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -71,13 +76,11 @@
             <div class="sm:hidden" id="mobile-menu" style="display: none;">
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#"
+                    <a href="buscarPeliculas.html"
                         class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Pelis</a>
-                    <a href="#"
+                    <a href="buscarSeries.html"
                         class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Series</a>
-                    <a href="#"
-                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Anime</a>
-                    <a href="#"
+                    <a href="suscripcion.html"
                         class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Únete</a>
                 </div>
             </div>
@@ -106,10 +109,10 @@
             <div id="castList" class="flex flex-row pb-5 space-x-4 overflow-x-scroll"></div>
         </section>
 
-        <section class="px-[2em] mt-[2em] ">
+        <!-- <section class="px-[2em] mt-[2em] ">
             <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500 ">Reseñas</h1>
             <div id="reviewsList" class="flex gap-4 mx-auto  pb-[1em] "></div>
-        </section>
+        </section> -->
 
         <section class="px-[2em] mt-[2em]">
             <h1 class="mb-5 text-4xl italic font-semibold dark:text-blanco-500 ">Recomendaciones</h1>
