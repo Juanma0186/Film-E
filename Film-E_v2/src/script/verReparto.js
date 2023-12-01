@@ -1,5 +1,4 @@
 import { IMAGE_URL } from "./config.js";
-import * as utils from "./utilities.js";
 
 export function verReparto(CAST_API_URL, list) {
   fetch(CAST_API_URL)
