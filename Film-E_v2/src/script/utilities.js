@@ -20,7 +20,13 @@ export function formatDate(date) {
   // Obtener día, mes y año
   const day = dateObject.getDate();
   const month = dateObject.getMonth() + 1;
-  const year = dateObject.getFullYear();
+  const year = getYear(date);
   // Crear una cadena con el formato deseado (DD-MM-YYYY)
   return `${day < 10 ? "0" : ""}${day}-${month < 10 ? "0" : ""}${month}-${year}`;
+}
+
+// Funcion para obetener el año de la fecha
+export function getYear(date) {
+  const dateObject = new Date(date);
+  return dateObject.getFullYear();
 }
