@@ -34,7 +34,8 @@ function renderMovies() {
 
   for (const serie of series) {
     if (serie.poster_path && serie.first_air_date) {
-      const serieDiv = document.createElement("div");
+      const serieDiv = document.createElement("a");
+      serieDiv.href = `detalleSerie.html?id=${serie.id}`;
       serieDiv.classList.add("bg-white", "p-4", "rounded", "shadow");
       serieDiv.innerHTML = `
             <h2 class="text-xl mb-2">${serie.name}</h2>

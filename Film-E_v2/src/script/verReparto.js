@@ -1,9 +1,11 @@
 import { IMAGE_URL } from "./config.js";
+import * as utils from "./utilities.js";
 
 export function verReparto(CAST_API_URL, list) {
   fetch(CAST_API_URL)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       // Sino hay reparto disponible, mostramos un mensaje
       const castList = document.getElementById(list);
       if (data.cast.length === 0) {
@@ -36,8 +38,8 @@ export function verReparto(CAST_API_URL, list) {
         castMember.innerHTML = `
                   <div class="flex flex-col items-center">
                       <img id="imagen${member.cast_id}" class="rounded-lg w-full" src="${imageUrl}" alt="${member.name}">
-                      <p class="text-lg text-center font-bold dark:text-blanco-500">${member.character} </p>
-                      <p class="text-sm text-center font-bold text-gris-300 ">${member.name} </p>
+                      <p class="text-lg text-center font-bold dark:text-blanco-500 ${(member.character.length > 17 ? "moving-text" : "")}" style="${member.character ? (member.character.length > 17 ? `--animation-duration: ${member.character.length * 0.2}s` : "") : (member.name.length > 17 ? `--animation-duration: ${member.name.length * 0.2}s` : "")}">${member.character} </p>
+                      <p class="text-sm text-center font-bold text-gris-300 ${(member.name.length > 17 ? "moving-text" : "")}" style="${member.title ? (member.title.length > 17 ? `--animation-duration: ${member.title.length * 0.2}s` : "") : (member.name.length > 17 ? `--animation-duration: ${member.name.length * 0.2}s` : "")}">${member.name} </p>
                   </div>
               `;
         castList.appendChild(castMember);
