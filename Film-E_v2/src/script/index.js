@@ -19,14 +19,6 @@ function fetchPopularMovies() {
   printMovies(API_URL, "popularList");
 }
 
-document
-  .getElementById("mobile-menu-btn")
-  .addEventListener("click", function () {
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.style.display =
-      mobileMenu.style.display === "none" ? "block" : "none";
-  });
-
 window.onscroll = function () {
   toTop();
 };
