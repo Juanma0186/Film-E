@@ -50,7 +50,6 @@ export function verDetalle(MOVIE_API_URL) {
                   <span class="bi bi-play text-3xl group-hover:scale-[1.1] translate-x-[2px]"></span>
                 </button>
               </div>
-
             </div>
           </div>
           `;
