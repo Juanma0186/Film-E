@@ -33,9 +33,9 @@
                         <span><i class="text-lg bi bi-moon-fill"></i></span>
                     </button>
                     <a href="buscarPeliculas.html"
-                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white activado">Pelis</a>
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Pelis</a>
                     <a href="buscarSeries.html"
-                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Series</a>
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white activado">Series</a>
                     <a href="suscripcion.html"
                         class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Únete</a>
                 </div>
@@ -100,14 +100,14 @@
         </div>
 
         <div class="container px-4 mx-auto">
-            <h1 class="py-8 text-4xl text-center dark:text-blanco-500 font-poppins">Buscador de Películas</h1>
+            <h1 class="py-8 text-4xl text-center dark:text-blanco-500 font-poppins">Buscador de Series</h1>
 
             <div class="flex">
                 <div id="filters" class="w-1/4 pr-4">
-                    <h2 class="mb-4 text-2xl">Filtros</h2>
+                    <h2 class="mb-4 text-2xl dark:text-blanco-500">Filtros</h2>
 
                     <div class="mb-4">
-                        <label for="sort_by" class="block mb-2">Ordenar por:</label>
+                        <label for="sort_by" class="block mb-2 dark:text-blanco-500">Ordenar por:</label>
                         <select id="sort_by" class="block w-full p-2 border rounded">
                             <option value="">Ninguno</option>
                             <option value="popularity.desc">Popularidad (descendente)</option>
@@ -124,7 +124,7 @@
                     </div>
                     <div id="genres" class="mb-4"></div>
 
-                    <div class="mb-4">
+                    <div class="flex justify-between mb-4">
 
                         <button onclick="previousPage()" class="px-4 py-2 ml-2 text-white bg-blue-500 rounded">Página
                             anterior</button>

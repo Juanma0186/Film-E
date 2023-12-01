@@ -42,7 +42,6 @@ function renderMovies() {
               <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" class="w-full mb-2 rounded">
               <p>Fecha de lanzamiento: ${movie.release_date}</p>
               <p>Valoración: ${movie.vote_average}</p>
-              <p>Géneros: ${movie.genre_ids.map(id => genres[id]).join(', ')}</p>
           `;
       resultsDiv.appendChild(movieLink);
     }

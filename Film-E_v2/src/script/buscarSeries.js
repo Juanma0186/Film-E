@@ -42,7 +42,6 @@ function renderMovies() {
             <img src="https://image.tmdb.org/t/p/w500${serie.poster_path}" alt="${serie.name}" class="w-full mb-2 rounded">
             <p>Fecha de lanzamiento: ${serie.first_air_date}</p>
             <p>Valoración: ${serie.vote_average}</p>
-            <p>Géneros: ${serie.genre_ids.map(id => genres[id]).join(', ')}</p>
         `;
       resultsDiv.appendChild(serieDiv);
     }
