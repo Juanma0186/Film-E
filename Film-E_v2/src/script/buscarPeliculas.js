@@ -98,3 +98,8 @@ window.onload = function () {
 window.onscroll = function () {
   toTop();
 };
+
+// Agrega las funciones al objeto window
+window.searchMovies = searchMovies;
+window.previousPage = previousPage;
+window.nextPage = nextPage;

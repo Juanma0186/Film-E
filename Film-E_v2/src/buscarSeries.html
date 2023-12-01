@@ -2,52 +2,173 @@
 <html>
 
 <head>
-    <title>Buscador de Series</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        if (localStorage.getItem("dark-mode") === "dark" || (!("dark-mode" in localStorage))) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+    <title>Buscador de Películas</title>
 </head>
 
-<body class="bg-gray-100">
-    <div class="container px-4 mx-auto">
-        <h1 class="my-8 text-4xl">Buscador de Series</h1>
-
-        <div class="flex">
-            <div id="filters" class="w-1/4 pr-4">
-                <h2 class="mb-4 text-2xl">Filtros</h2>
-
-                <div class="mb-4">
-                    <label for="sort_by" class="block mb-2">Ordenar por:</label>
-                    <select id="sort_by" class="block w-full p-2 border rounded">
-                        <option value="">Ninguno</option>
-                        <option value="popularity.desc">Popularidad (descendente)</option>
-                        <option value="popularity.asc">Popularidad (ascendente)</option>
-                        <option value="first_air_date.desc">Fecha de lanzamiento (descendente)</option>
-                        <option value="first_air_date.asc">Fecha de lanzamiento (ascendente)</option>
-                        <option value="vote_average.desc">Valoración (descendente)</option>
-                        <option value="vote_average.asc">Valoración (ascendente)</option>
-                    </select>
+<body class="font-roboto">
+    <!--? HEADER -->
+    <header>
+        <nav class="transition-all duration-300 ease-linear bg-blanco-500 dark:bg-negro-500">
+            <div
+                class="relative flex items-center justify-between h-20 px-[10%] py-[1em] z-10 animate-fade-down animate-duration-[2000ms] animate-ease-out ">
+                <div class="flex items-center flex-shrink-0">
+                    <a href="index.html" class="block h-full text-4xl font-bold rounded-lg text-azul-500 hover:italic"
+                        aria-current="page">
+                        FILM<span class="text-verde-500">-</span><span class="text-rojo-500">E</span>
+                    </a>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center sm:justify-center nav-items">
+                    <button class="switch" id="switch" aria-label="darkMode button">
+                        <span><i class="bi bi-sun-fill"></i></span>
+                        <span><i class="text-lg bi bi-moon-fill"></i></span>
+                    </button>
+                    <a href="buscarPeliculas.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white activado">Pelis</a>
+                    <a href="buscarSeries.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Series</a>
+                    <a href="suscripcion.html"
+                        class="px-3 py-2 font-medium transition-all duration-300 rounded-md text-md dark:text-blanco-500 hover:text-white">Únete</a>
                 </div>
 
-                <div class="mb-3 text-center">
-                    <button onclick="searchMovies()" class="px-4 py-2 text-white bg-yellow-500 rounded">Buscar</button>
+                <!--BACKDROP-->
+                <div id="menu-backdrop"
+                    class="absolute bg-azul-500 rounded-lg left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out opacity-0 -z-10">
                 </div>
-                <div id="genres" class="mb-4"></div>
 
-                <div class="mb-4">
+                <div class="flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button" id="mobile-menu-btn"
+                        class="relative inline-flex items-center justify-center p-2 rounded-md text-azul-500 hover:bg-azul-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-azul-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="mobile button">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <!--
+                                Icon when menu is closed.
+            
+                                Menu open: "hidden", Menu closed: "block"
+                                -->
+                        <svg class="block w-6 h-6 border" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
 
-                    <button onclick="previousPage()" class="px-4 py-2 ml-2 text-white bg-blue-500 rounded">Página
-                        anterior</button>
-                    <button onclick="nextPage()" class="px-4 py-2 ml-2 text-white bg-blue-500 rounded">Siguiente
-                        página</button>
+                        <svg class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        </button>
                 </div>
             </div>
 
-            <div id="results" class="grid w-3/4 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
-        </div>
-    </div>
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu" style="display: none;">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="buscarPeliculas.html"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500 activado">Pelis</a>
+                    <a href="buscarSeries.html"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Series</a>
+                    <a href="suscripcion.html"
+                        class="block px-3 py-2 text-base font-medium rounded-md hover:bg-azul-500 hover:text-white hover:duration-300 dark:text-blanco-500">Únete</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--? FIN HEADER -->
 
-    <script  src="script/buscarSeries.js"></script>
+    <!--? MAIN -->
+    <main class="transition-all duration-300 ease-linear dark:bg-gris-100">
+
+        <!-- BACK-TO-TOP-->
+        <div id="back-to-top" class="fixed bottom-0 right-0 z-10 mb-4 mr-4 overflow-hidden rounded-full group">
+            <button aria-label="Back to top"
+                class="items-center justify-center w-12 h-12 text-white transition-all duration-300 ease-linear opacity-0 bg-azul-500 hover:bg-azul-300 focus:outline-none"
+                id="toTop">
+                <i class="text-2xl font-bold bi bi-caret-up group-hover:scale-[1.1] transition-all duration-300"></i>
+            </button>
+        </div>
+
+        <div class="container px-4 mx-auto">
+            <h1 class="py-8 text-4xl text-center dark:text-blanco-500 font-poppins">Buscador de Películas</h1>
+
+            <div class="flex">
+                <div id="filters" class="w-1/4 pr-4">
+                    <h2 class="mb-4 text-2xl">Filtros</h2>
+
+                    <div class="mb-4">
+                        <label for="sort_by" class="block mb-2">Ordenar por:</label>
+                        <select id="sort_by" class="block w-full p-2 border rounded">
+                            <option value="">Ninguno</option>
+                            <option value="popularity.desc">Popularidad (descendente)</option>
+                            <option value="popularity.asc">Popularidad (ascendente)</option>
+                            <option value="release_date.desc">Fecha de lanzamiento (descendente)</option>
+                            <option value="release_date.asc">Fecha de lanzamiento (ascendente)</option>
+                            <option value="vote_average.desc">Valoración (descendente)</option>
+                            <option value="vote_average.asc">Valoración (ascendente)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button onclick="searchMovies()"
+                            class="px-4 py-2 text-white bg-yellow-500 rounded">Buscar</button>
+                    </div>
+                    <div id="genres" class="mb-4"></div>
+
+                    <div class="mb-4">
+
+                        <button onclick="previousPage()" class="px-4 py-2 ml-2 text-white bg-blue-500 rounded">Página
+                            anterior</button>
+                        <button onclick="nextPage()" class="px-4 py-2 ml-2 text-white bg-blue-500 rounded">Siguiente
+                            página</button>
+                    </div>
+                </div>
+
+                <div id="results" class="grid w-3/4 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!--? FOOTER -->
+    <footer class="p-6 bg-negro-500">
+        <div
+            class="flex flex-col items-center justify-start w-full gap-6 mt-4 sm:gap-2 sm:justify-around sm:items-center sm:flex-row">
+            <div class="flex flex-col items-center justify-center gap-2 w-fit ">
+                <a href="index.html"
+                    class="block h-full p-2 text-4xl font-bold rounded-lg text-azul-500 hover:italic bg-blanco-500"
+                    aria-current="page">
+                    FILM<span class="text-verde-500">-</span><span class="text-rojo-500">E</span>
+                </a>
+                <p class="text-sm text-white">
+                    © 2023 Film-E.
+                </p>
+            </div>
+            <div class="flex flex-col items-start justify-center w-[100px]">
+                <a href="aboutus.html" class="text-white hover:underline">About Us</a>
+                <a href="soporte.html" class="text-white hover:underline">Soporte</a>
+                <a href="sugerencias.html" class="text-white hover:underline">Sugerencias</a>
+            </div>
+            <div class="flex flex-col items-start justify-center w-[100px]">
+                <a href="terminos.html" class="text-white hover:underline">Términos</a>
+                <a href="politica.html" class="text-white hover:underline">Política</a>
+                <a href="recursos.html" class="text-white hover:underline">Recursos</a>
+            </div>
+        </div>
+    </footer>
+    <!--? FIN FOOTER -->
+
+    <script type="module" src="script/buscarSeries.js"></script>
 </body>
 
 </html>
