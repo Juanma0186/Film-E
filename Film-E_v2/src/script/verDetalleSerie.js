@@ -1,4 +1,4 @@
-import { SERIE_API_URL, SERIE_CAST_API_URL, TV_REVIEW_API_URL } from "./config.js";
+import { SERIE_API_URL, SERIE_CAST_API_URL } from "./config.js";
 import { verReparto } from "./verReparto.js";
 import { verDetalle } from "./verDetallePelicula.js";
 import { toTop } from "./toTop.js";
