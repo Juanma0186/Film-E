@@ -1,3 +1,5 @@
+import { navbar } from "./navbar";
+import { toTop } from "./toTop";
 const apiKey = "a35eb9b2a0da4da2cd02766b7d42ed24";
 const apiBaseUrl = "https://api.themoviedb.org/3";
 let currentPage = 1;
@@ -90,4 +92,9 @@ function loadGenres() {
 window.onload = function () {
   searchMovies();
   loadGenres();
+  navbar();
+};
+
+window.onscroll = function () {
+  toTop();
 };
