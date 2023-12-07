@@ -33,3 +33,7 @@ nav:
     - Vite: vite.md
     - Tailwind: tailwind.md
     - API: api.md
+  - Diseño: 
+      - Excalidraw: excalidraw.md  
+      - Principal: paginaPrincipal.md  
+      - Detalles: paginaDetalles.md

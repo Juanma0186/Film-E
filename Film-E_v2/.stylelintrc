@@ -2,4 +2,5 @@
   "extends": "stylelint-config-manzdev",
   "rules": {
   }
+
 }

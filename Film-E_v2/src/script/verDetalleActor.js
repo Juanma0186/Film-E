@@ -21,7 +21,7 @@ export function verDetalleActor(ACTOR_API_URL) {
               <div class="flex-[2] flex flex-col items-start gap-2 px-4 py-[2em] dark:text-blanco-500 text-xl">
                   <h2 class="text-4xl font-bold dark:text-blanco-500 font-poppins">${actorName}<span class="text-gris-300 dark:text-gris-500 font-normal"> (${actorBirthday})</span></h2>
                   <p> ${actorPlaceOfBirth}</p>
-                  <p><span class="underline">Bigrafía:</span><br/><span class="text-lg">${actor.biography ? actor.biography : "<b>[No disponible]</b>"}</span></p>
+                  <p><span class="underline">Biografía:</span><br/><span class="text-lg">${actor.biography ? actor.biography : "<b>[No disponible]</b>"}</span></p>
                   ${actor.deathday ? actorDeathday : ""}
                   <p">Popularidad: ${actorPopularity}</p>
               </div>
