@@ -27,3 +27,30 @@ npm run dev
 `npm install` instalará todas las dependencias necesarias para que nuestro proyecto funcione correctamente.
 
 `npm run dev` iniciará el servidor de desarrollo local. Podremos ver nuestra web en la dirección `http://localhost:3000`. El puerto podrá variar dependiendo de cuales estén disponibles.
+
+### Estructura de Vite
+
+La estructura de Vite es muy sencilla, ya que solo tenemos que preocuparnos de la carpeta `src`, donde se encuentra todo nuestro código.
+
+Como mucho deberemos modificar el archivo `tailwind.config.js` que explicaremos en su apartado correspondiente ([Tailwind](/docs/tailwind.md)).
+
+```bash
+├── node_modules
+├── public
+├── src
+│   ├── css
+│   ├── fonts
+│   ├── img
+│   ├── script
+│   ├── *.html
+├── .gitignore
+├── .eslintrc.json
+├── .stylelintrc
+├── package-lock.json
+├── package.json
+├── README.md
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+```
+

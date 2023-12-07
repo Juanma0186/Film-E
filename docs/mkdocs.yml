@@ -1,7 +1,26 @@
 site_name: Film-E Docs
 theme:
   name: material
+  language: es
+  palette: 
+    # Palette toggle for light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      toggle:
+        icon: material/lightbulb 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+
 nav:
-  - Film-E: index.md
+  - Inicio: index.md
   - Primeros pasos:
     - Vite: vite.md
+    - Tailwind: tailwind.md
+    - API: api.md
