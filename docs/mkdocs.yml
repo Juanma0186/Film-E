@@ -62,3 +62,6 @@ nav:
       - Ajax: buscadorAjax.md
       - BuscadorPeli: buscadorPeli.md
       - ApiYoutube: apiYoutube.md
+  - Módulo: 
+      - Imports&Exports: modulos.md
+      - Gestión de Constantes y URLs de API: gestion_constantes_urls.md
