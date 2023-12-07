@@ -53,4 +53,3 @@ Como mucho deberemos modificar el archivo `tailwind.config.js` que explicaremos 
 ├── tailwind.config.js
 ├── vite.config.js
 ```
-
