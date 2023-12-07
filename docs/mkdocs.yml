@@ -60,4 +60,5 @@ nav:
       - Detalles: paginaDetalles.md
   - Buscadores: 
       - Ajax: buscadorAjax.md
-      - BuscadorPeli: buscadorPeli.md    
+      - BuscadorPeli: buscadorPeli.md
+      - ApiYoutube: apiYoutube.md
