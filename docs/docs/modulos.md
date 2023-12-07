@@ -1,8 +1,8 @@
 # Importación y Exportación en JavaScript
 
-También conocida como sintaxis de módulos EcmaScript (ESM), nos permite importar y exportar clases, funciones, componentes, constantes y cualquier otra variable de JavaScript entre un archivo JavaScript y otro.
+También conocida como sintaxis de módulos EcmaScript (ESM), permite importar y exportar clases, funciones, componentes, constantes y cualquier otra variable de JavaScript entre un archivo JavaScript y otro.
 
-Esta función nos permite organizar el código JavaScript en archivos pequeños. Facilita el uso compartido, la mejora, la gestión y la depuración del código según lo requiera la fase de desarrollo.
+Esta función permite organizar el código JavaScript en archivos pequeños. Facilita el uso compartido, la mejora, la gestión y la depuración del código según lo requiera la fase de desarrollo.
 
 ## Cómo funciona la exportación de JavaScript
 

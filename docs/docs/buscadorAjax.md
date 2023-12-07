@@ -15,7 +15,7 @@ const searchResults = $("#search-results");
 
 ## Solicitud al servidor con la URL de búsqueda y el término de búsqueda actual
 
-En esta sección, realizamos una solicitud AJAX al servidor con la URL de búsqueda y el término actual ingresado por el usuario. La respuesta del servidor se procesa en la función success, actualizando dinámicamente el contenido del DOM con los resultados obtenidos.
+En esta sección, se realiza una solicitud AJAX al servidor con la URL de búsqueda y el término actual ingresado por el usuario. La respuesta del servidor se procesa en la función success, actualizando dinámicamente el contenido del DOM con los resultados obtenidos.
 ```javascript
 
 $.ajax({
@@ -29,7 +29,7 @@ $.ajax({
 
 ## Iteración sobre los resultados de la búsqueda y construcción del HTML
 
-En este bloque de código, iteramos sobre los resultados de la búsqueda y construimos elementos HTML dinámicamente para cada resultado. Los resultados se agregan al contenedor de resultados (searchResults), proporcionando una interfaz de usuario atractiva
+En este bloque de código, se itera  sobre los resultados de la búsqueda y se construye los elementos HTML dinámicamente para cada resultado. Los resultados se agregan al contenedor de resultados (searchResults), proporcionando una interfaz de usuario atractiva
 ```javascript
 results.forEach((result) => {
     searchResults.append(resultElement);
@@ -61,7 +61,7 @@ function debounce(func, wait) {
 
 ## Cierre y Limpieza al Hacer Clic Fuera del Contenedor de Resultados
 
-Finalmente, configuramos un evento de clic en el documento para cerrar y limpiar el contenedor de resultados cuando se hace clic fuera de él. Esto mejora la experiencia del usuario al proporcionar una forma intuitiva de cerrar los resultados de búsqueda.
+Finalmente, se configura un evento de clic en el documento para cerrar y limpiar el contenedor de resultados cuando se hace clic fuera de él. Esto mejora la experiencia del usuario al proporcionar una forma intuitiva de cerrar los resultados de búsqueda.
 
 ```javascript
 // Configuramos el evento click para cerrar y limpiar el contenedor de resultados al hacer clic fuera de él

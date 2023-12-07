@@ -119,6 +119,8 @@ function loadGenres() {
 <span style="color:red; font-size:40px">¡Importante!</span>
 
 Estas líneas aseguran que ciertas funciones estén disponibles globalmente en el objeto window, lo que permite su acceso desde otros scripts o entornos.
+
+Sin esto no funcionaría nada.
 ```javascript
 // Agrega las funciones al objeto window
 window.searchMovies = searchMovies;

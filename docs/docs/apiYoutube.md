@@ -29,7 +29,7 @@ export function verTrailer(movieTitle) {
 
 ## Descripción de la función
 
-- ***Definición de constantes:*** La función define dos constantes, YOUTUBE_API_KEY y YOUTUBE_API_URL. YOUTUBE_API_KEY es tu clave API de YouTube, y YOUTUBE_API_URL es la URL de la API de YouTube que se utilizará para buscar el tráiler de la película.
+- ***Definición de constantes:*** La función define dos constantes, YOUTUBE_API_KEY y YOUTUBE_API_URL. YOUTUBE_API_KEY es la clave API de YouTube, y YOUTUBE_API_URL es la URL de la API de YouTube que se utilizará para buscar el tráiler de la película.
 
 - ***Solicitud a la API de YouTube:*** La función realiza una solicitud a la API de YouTube utilizando la función fetch. La URL de la solicitud incluye el título de la película y la clave API.
 
