@@ -1,6 +1,9 @@
 site_name: Film-E Docs
+site_description: Documentación de Film-E
+site_author: Juan Manuel y Miguel Ángel
 repo_url: https://github.com/Juanma0186/Film-E
 repo_name: Proyecto Film-E
+
 theme:
   name: material
   language: es
@@ -24,6 +27,24 @@ theme:
     - navigation.footer
     - search.suggest
     - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 copyright: Copyright &copy; 2023
 
