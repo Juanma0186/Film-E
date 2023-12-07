@@ -1,0 +1,7 @@
+site_name: Film-E Docs
+theme:
+  name: material
+nav:
+  - Film-E: index.md
+  - Primeros pasos:
+    - Vite: vite.md
