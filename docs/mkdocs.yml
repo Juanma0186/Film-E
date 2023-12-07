@@ -1,4 +1,6 @@
 site_name: Film-E Docs
+repo_url: https://github.com/Juanma0186/Film-E
+repo_name: Proyecto Film-E
 theme:
   name: material
   language: es
@@ -16,7 +18,14 @@ theme:
         icon: material/lightbulb-outline
         name: Switch to light mode
   features:
+    - navigation.sections
     - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+
+copyright: Copyright &copy; 2023
 
 nav:
   - Inicio: index.md

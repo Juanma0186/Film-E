@@ -38,6 +38,14 @@ npx tailwindcss init -p
 
 `npx tailwindcss init -p` creará el archivo `tailwind.config.js` que nos permitirá configurar TailWind.
 
+Después solo deberemos añadir el siguiente código en el archivo style.css que se encuentra en la carpeta `src/css` y vincularlo en los archivos `*.html`:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 ## Configuración de TailWind
 
 El archivo `tailwind.config.js` se creará en la raíz de nuestro proyecto y tendrá la siguiente estructura:

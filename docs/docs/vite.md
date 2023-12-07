@@ -1,12 +1,12 @@
 # Vite
 
-### ¿Qué es Vite?
+## ¿Qué es Vite?
 
 Vite es un _**bundler**_ o servidor de desarrollo local que permite crear aplicaciones web con Vue, React o JavaScript Vanilla (como en nuestro caso), entre otros.
 
 Nos permite crear aplicaciones web con un _hot reload_ muy rápido, ya que permite ver los cambios de nuestro código en tiempo real sin tener que estar actualizando constantemente la web.
 
-### Instalación de Vite
+## Instalación de Vite
 
 ```bash
 npm create-vite <nombre-proyecto>
@@ -14,7 +14,7 @@ npm create-vite <nombre-proyecto>
 
 Reemplazaremos `<nombre-proyecto>` por el nombre de nuestro proyecto.
 
-### Iniciar Vite
+## Iniciar Vite
 
 Para inicializar Vite, nos dirigimos a la carpeta de nuestro proyecto y ejecutamos los siguientes comandos:
 
@@ -28,7 +28,7 @@ npm run dev
 
 `npm run dev` iniciará el servidor de desarrollo local. Podremos ver nuestra web en la dirección `http://localhost:3000`. El puerto podrá variar dependiendo de cuales estén disponibles.
 
-### Estructura de Vite
+## Estructura de Vite
 
 La estructura de Vite es muy sencilla, ya que solo tenemos que preocuparnos de la carpeta `src`, donde se encuentra todo nuestro código.
 
