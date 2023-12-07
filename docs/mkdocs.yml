@@ -58,3 +58,6 @@ nav:
       - Excalidraw: excalidraw.md  
       - Principal: paginaPrincipal.md  
       - Detalles: paginaDetalles.md
+  - Buscadores: 
+      - Ajax: buscadorAjax.md
+      - BuscadorPeli: buscadorPeli.md    
