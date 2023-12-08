@@ -64,7 +64,7 @@ export function navbar() {
 
 <span style="color:red; font-size:40px">¡Importante!</span>
 
-El atributo **type="module"** es crucial para que los navegadores modernos traten el script como un módulo de JavaScript1. Este atributo permite que se utilicen las declaraciones import y export dentro del script.
+El atributo **type="module"** es crucial para que los navegadores modernos traten el script como un módulo de JavaScript. Este atributo permite que se utilicen las declaraciones import y export dentro del script.
 
 
 Si no se incluye type="module", salta un error al usar import o export
