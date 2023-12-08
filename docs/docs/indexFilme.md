@@ -14,13 +14,13 @@ En la cima, la barra de navegación presenta el logo de Film-E y enlaces directo
 
 Justo debajo de la barra de navegación, te da la bienvenida un buscador de películas y series en un diseño tipo "hero". Este elemento central ocupa gran parte de la pantalla, asegurando que los usuarios encuentren fácilmente lo que buscan.
 
-[![Buscador de películas y series](images/hero.png)](search.md)
+[![Buscador de películas y series](images/hero.png)](buscadorIndex.md)
 
 ## Películas en Cines
 
 Descendiendo desde el buscador, descubrirás la sección de películas en que se encuentran actualmente en cines. El usuario podrá ver el título, la fecha de estreno y la valoración de la película. Si el usuario desea ver más detalles de la película, puede hacer click encima de la tarjeta de la película y será redirigido a la página de detalles de la película.
 
-![Buscador de películas y series](images/enCine.png)
+[![Buscador de películas y series](images/enCine.png)](enCine.md)
 
 ## Selección de Film-E
 

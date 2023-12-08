@@ -52,13 +52,25 @@ nav:
     - Vite: vite.md
     - Tailwind: tailwind.md
     - API: api.md
-  - Comunes: comunes.md
-
+  - Comunes:
+    - HTML: comunes.md
+    - Funciones: funciones.md
   - Index: 
       - Resumen: indexFilme.md  
-      - Detalles: paginaDetalles.md
+      - Buscador: buscadorIndex.md
+      - En Cines: enCine.md
+      - Únete: unete.md
+      - Populares: populares.md
+  - Películas: 
+      - Resumen: peliculas.md
+      - Película: pelicula.md
+  - Series: 
+      - Resumen: series.md
+      - Serie: serie.md
+  - Actor/Actriz: 
+      - Resumen: actores.md
+      - Actor/Actriz: actor.md
   - Buscadores: 
-      - Ajax: buscadorAjax.md
       - BuscadorPeli: buscadorPeli.md
       - ApiYouTube: apiYoutube.md
   - Módulo: 

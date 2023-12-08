@@ -1,8 +1,16 @@
-# Búsqueda en Tiempo Real con jQuery y AJAX
+# Buscador Global
+
+## Descripción
+
+El buscador global es un buscador que aparece en la parte visible del index al entrar a nuestra web. Este buscador permite al usuario buscar películas, series y actores. El buscador se irá actualizando a medida que el usuario vaya escribiendo en el input. 
+
+Al hacer click en uno de los resultados de la búsqueda, el usuario será redirigido a la página de la película o serie correspondiente.
+
+## Funcionamiento
 
 El siguiente código se utiliza para implementar una funcionalidad de búsqueda en tiempo real en un proyecto web utilizando jQuery y AJAX. Aquí hay una explicación detallada de las partes clave del código:
 
-## Importaciones y Selección de Elementos del DOM
+#### Importaciones y Selección de Elementos del DOM
 
 ```javascript
 import { SEARCH_ALL } from "./config.js";
@@ -13,7 +21,7 @@ const searchInput = $("#search-input");
 const searchResults = $("#search-results");
 ```
 
-## Solicitud al servidor con la URL de búsqueda y el término de búsqueda actual
+#### Solicitud al servidor con la URL de búsqueda y el término de búsqueda actual
 
 En esta sección, se realiza una solicitud AJAX al servidor con la URL de búsqueda y el término actual ingresado por el usuario. La respuesta del servidor se procesa en la función success, actualizando dinámicamente el contenido del DOM con los resultados obtenidos.
 ```javascript
@@ -27,7 +35,7 @@ $.ajax({
 });
 ```
 
-## Iteración sobre los resultados de la búsqueda y construcción del HTML
+#### Iteración sobre los resultados de la búsqueda y construcción del HTML
 
 En este bloque de código, se itera  sobre los resultados de la búsqueda y se construye los elementos HTML dinámicamente para cada resultado. Los resultados se agregan al contenedor de resultados (searchResults), proporcionando una interfaz de usuario atractiva
 ```javascript
@@ -37,7 +45,7 @@ results.forEach((result) => {
 });
 ```
 
-## Función de debounce
+#### Función de debounce
 
 Se proporciona una función de debounce para mejorar el rendimiento al limitar la frecuencia de ejecución de la función de búsqueda durante la entrada del usuario.
 
@@ -59,7 +67,7 @@ function debounce(func, wait) {
 }
 ```
 
-## Cierre y Limpieza al Hacer Clic Fuera del Contenedor de Resultados
+#### Cierre y Limpieza al Hacer Clic Fuera del Contenedor de Resultados
 
 Finalmente, se configura un evento de clic en el documento para cerrar y limpiar el contenedor de resultados cuando se hace clic fuera de él. Esto mejora la experiencia del usuario al proporcionar una forma intuitiva de cerrar los resultados de búsqueda.
 
