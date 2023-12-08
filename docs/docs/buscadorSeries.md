@@ -1,43 +1,41 @@
-# Buscador de Películas
+# Buscador de Series
 
-En esta primera sección de la barra de navegación podremos encontrar un buscador de películas, el cual nos permitirá buscar películas, filtrarlas por género y ordenarlas por fecha de lanzamiento o por valoración, entre otras opciones.
+En esta segunda sección de la barra de navegación podremos encontrar un buscador de series, el cual nos permitirá buscar series, filtrarlas por género y ordenarlas por fecha de lanzamiento o por valoración, entre otras opciones.
 
 También existe una paginación que nos permitirá navegar entre todos los resultados de búsqueda y no estar limitados solo a la primera página resultante.
 
-![Buscador de Películas](images/buscadorPelis.png)
+![Buscador de Series](images/buscadorSeries.png)
 
-## Implementación de Búsqueda y Visualización de Películas
+## Implementación de Búsqueda y Visualización de Series
 
-Este código implementa una funcionalidad de búsqueda y visualización de películas en un proyecto web. Aquí se detallan las partes clave del código:
+Este código implementa una funcionalidad de búsqueda y visualización de series en un proyecto web. Aquí se detallan las partes clave del código:
 
 #### Importación de Módulos y Configuración de Variables
 
 Se importan los módulos navbar y toTop. Además, se configuran variables esenciales, como la clave de la API (apiKey), la URL base de la API (apiBaseUrl), y otras variables relacionadas con la paginación y la gestión de géneros.
 
-```javascript title="buscarPelis.js"
+```javascript title="buscarSeries.js"
 import { navbar } from "./navbar";
 import { toTop } from "./toTop";
 
 const apiKey = "a35eb9b2a0da4da2cd02766b7d42ed24";
 const apiBaseUrl = "https://api.themoviedb.org/3";
 let currentPage = 1;
-let movies = [];
+let series = [];
 let selectedGenre = null;
 const genres = {};
 ```
 
-#### Función de Búsqueda de Películas
-Esta función realiza una solicitud a la API de The Movie Database (TMDb) para obtener películas según los criterios especificados, como la página actual, el rango de fechas y el género seleccionado. Luego, se procesa la respuesta y se llama a la función renderMovies para mostrar los resultados en el DOM.
+#### Función de Búsqueda de Series
+Esta función realiza una solicitud a la API de The Movie Database (TMDb) para obtener series según los criterios especificados, como la página actual, el rango de fechas y el género seleccionado. Luego, se procesa la respuesta y se llama a la función renderMovies para mostrar los resultados en el DOM.
 
-```javascript title="buscarPelis.js"
-function searchMovies() {
+```javascript title="buscarSeries.js"
+function searchSeries() {
   const sortBy = document.getElementById("sort_by").value;
-  let url = `${apiBaseUrl}/discover/movie?api_key=${apiKey}&language=es-ES&page=${currentPage}&primary_release_date.gte=1980-01-01&primary_release_date.lte=2024-12-31`;
-
+  let url = `${apiBaseUrl}/discover/tv?api_key=${apiKey}&language=es-ES&page=${currentPage}&primary_release_date.gte=1980-01-01&primary_release_date.lte=2024-12-31`;
   if (selectedGenre) {
     url += `&with_genres=${selectedGenre}`;
   }
-
   if (sortBy) {
     url += `&sort_by=${sortBy}`;
   }
@@ -45,18 +43,19 @@ function searchMovies() {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      movies = data.results;
-      renderMovies();
+      series = data.results;
+      renderSeries();
     })
     .catch(error => {
       console.error(error);
     });
 }
+
 ```
 
-#### Función de Renderizado de Películas
-La función renderMovies se encarga de generar y mostrar elementos HTML para cada película en la interfaz. Se crea un enlace (***< a >***) para cada película con detalles como título, imagen de póster, fecha de lanzamiento y valoración.
-```javascript title="buscarPelis.js"
+#### Función de Renderizado de Series
+La función renderMovies se encarga de generar y mostrar elementos HTML para cada serie en la interfaz. Se crea un enlace (***< a >***) para cada serie con detalles como título, imagen de póster, fecha de lanzamiento y valoración.
+```javascript title="buscarSeries.js"
 function renderMovies() {
   const resultsDiv = document.getElementById("results");
   resultsDiv.innerHTML = "";
@@ -80,7 +79,7 @@ function renderMovies() {
 
 #### Funciones de Paginación y Selección de Género
 Estas funciones gestionan la paginación y la selección de género. nextPage y previousPage avanzan y retroceden a través de las páginas de resultados, mientras que selectGenre filtra los resultados por el género seleccionado.
-```javascript title="buscarPelis.js"
+```javascript title="buscarSeries.js"
 function nextPage() {
   currentPage++;
   searchMovies();
@@ -100,7 +99,7 @@ function selectGenre(genreId) {
 
 #### Carga de Géneros
 La función loadGenres obtiene y muestra los géneros disponibles. Cada género se representa como un botón interactivo que, al hacer clic, filtra los resultados de búsqueda.
-```javascript title="buscarPelis.js"
+```javascript title="buscarSeries.js"
 function loadGenres() {
   const url = `${apiBaseUrl}/genre/movie/list?api_key=${apiKey}&language=es-ES`;
 
@@ -126,7 +125,7 @@ function loadGenres() {
 Estas líneas aseguran que ciertas funciones estén disponibles globalmente en el objeto window, lo que permite su acceso desde otros scripts o entornos.
 
 Sin esto no funcionaría nada.
-```javascript title="buscarPelis.js"
+```javascript title="buscarSeries.js"
 // Agrega las funciones al objeto window
 window.searchMovies = searchMovies;
 window.previousPage = previousPage;

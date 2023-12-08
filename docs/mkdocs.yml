@@ -63,17 +63,11 @@ nav:
       - Únete: unete.md
       - Populares: populares.md
   - Películas: 
-      - Buscador: buscadorPelis.md
+      - Buscador Películas: buscadorPelis.md
       - Detalle Película: detallePeli.md
   - Series: 
-      - Resumen: series.md
-      - Serie: serie.md
+      - Buscador Series: buscadorSeries.md
+      - Detalle Serie: detalleSerie.md
   - Actor/Actriz: 
       - Resumen: actores.md
       - Actor/Actriz: actor.md
-  - Buscadores: 
-      - BuscadorPeli: buscadorPeli.md
-      - ApiYouTube: apiYoutube.md
-  - Módulo: 
-      - Imports&Exports: modulos.md
-      - Gestión de Constantes y URLs de API: gestion_constantes_urls.md
