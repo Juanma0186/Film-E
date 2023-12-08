@@ -70,4 +70,5 @@ nav:
       - Detalle Serie: detalleSerie.md
   - Actor/Actriz: 
       - Resumen: actores.md
-      - Actor/Actriz: actor.md
+      - Pelis Relacionadas: pelisRelacionadas.md
+      - Series Relacionadas: seriesRelacionadas.md
