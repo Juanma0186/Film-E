@@ -1,8 +1,16 @@
-# Implementación de Búsqueda y Visualización de Películas
+# Buscador de Películas
+
+En esta primera sección de la barra de navegación podremos encontrar un buscador de películas, el cual nos permitirá buscar películas, filtrarlas por género y ordenarlas por fecha de lanzamiento o por valoración, entre otras opciones.
+
+También existe una paginación que nos permitirá navegar entre todos los resultados de búsqueda y no estar limitados solo a la primera página resultante.
+
+![Buscador de Películas](images/buscadorPelis.png)
+
+## Implementación de Búsqueda y Visualización de Películas
 
 Este código implementa una funcionalidad de búsqueda y visualización de películas en un proyecto web. Aquí se detallan las partes clave del código:
 
-## Importación de Módulos y Configuración de Variables
+#### Importación de Módulos y Configuración de Variables
 
 Se importan los módulos navbar y toTop. Además, se configuran variables esenciales, como la clave de la API (apiKey), la URL base de la API (apiBaseUrl), y otras variables relacionadas con la paginación y la gestión de géneros.
 
@@ -18,7 +26,7 @@ let selectedGenre = null;
 const genres = {};
 ```
 
-## Función de Búsqueda de Películas
+#### Función de Búsqueda de Películas
 Esta función realiza una solicitud a la API de The Movie Database (TMDb) para obtener películas según los criterios especificados, como la página actual, el rango de fechas y el género seleccionado. Luego, se procesa la respuesta y se llama a la función renderMovies para mostrar los resultados en el DOM.
 ```javascript
 function searchMovies() {
@@ -45,7 +53,7 @@ function searchMovies() {
 }
 ```
 
-## Función de Renderizado de Películas
+#### Función de Renderizado de Películas
 La función renderMovies se encarga de generar y mostrar elementos HTML para cada película en la interfaz. Se crea un enlace (***< a >***) para cada película con detalles como título, imagen de póster, fecha de lanzamiento y valoración.
 ```javascript
 function renderMovies() {
@@ -67,11 +75,9 @@ function renderMovies() {
     }
   }
 }
-
 ```
 
-
-## Funciones de Paginación y Selección de Género
+#### Funciones de Paginación y Selección de Género
 Estas funciones gestionan la paginación y la selección de género. nextPage y previousPage avanzan y retroceden a través de las páginas de resultados, mientras que selectGenre filtra los resultados por el género seleccionado.
 ```javascript
 function nextPage() {
@@ -89,11 +95,9 @@ function selectGenre(genreId) {
   selectedGenre = genreId;
   searchMovies();
 }
-
-
 ```
 
-## Carga de Géneros
+#### Carga de Géneros
 La función loadGenres obtiene y muestra los géneros disponibles. Cada género se representa como un botón interactivo que, al hacer clic, filtra los resultados de búsqueda.
 ```javascript
 function loadGenres() {
@@ -113,10 +117,10 @@ function loadGenres() {
         button.onclick = () => selectGenre(genre.id);
         genresDiv.appendChild(button);
       }
-
+    })
 ```
 
-<span style="color:red; font-size:40px">¡Importante!</span>
+<span style="color:red; font-size:25px">¡Importante!</span>
 
 Estas líneas aseguran que ciertas funciones estén disponibles globalmente en el objeto window, lo que permite su acceso desde otros scripts o entornos.
 

@@ -55,6 +55,7 @@ nav:
   - Comunes:
     - HTML: comunes.md
     - Funciones: funciones.md
+    - Config.js: config.md
   - Index: 
       - Resumen: indexFilme.md  
       - Buscador: buscadorIndex.md
@@ -62,8 +63,8 @@ nav:
       - Únete: unete.md
       - Populares: populares.md
   - Películas: 
-      - Resumen: peliculas.md
-      - Película: pelicula.md
+      - Buscador: buscadorPelis.md
+      - Detalle Película: detallePeli.md
   - Series: 
       - Resumen: series.md
       - Serie: serie.md

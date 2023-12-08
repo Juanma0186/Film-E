@@ -1,4 +1,4 @@
-# Gestión de Constantes y URLs de API
+# Archivo de configuración
 
 Estas constantes se utilizan para construir URLs que se utilizan en solicitudes a la [**API**](api.md) de TMDb para obtener información específica sobre películas, series, actores, géneros, etc.
 
