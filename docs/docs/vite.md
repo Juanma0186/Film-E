@@ -34,7 +34,7 @@ La estructura de Vite es muy sencilla, ya que solo tenemos que preocuparnos de l
 
 Como mucho deberemos modificar el archivo `tailwind.config.js` que explicaremos en su apartado correspondiente ([Tailwind](/docs/tailwind.md)).
 
-```bash
+```bash title="Estructura del proyecto"
 ├── node_modules
 ├── public
 ├── src

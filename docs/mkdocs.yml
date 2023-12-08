@@ -51,17 +51,17 @@ copyright: Copyright &copy; 2023
 nav:
   - Inicio: index.md
   - Primeros pasos:
+    - Excalidraw: excalidraw.md  
     - Vite: vite.md
     - Tailwind: tailwind.md
     - API: api.md
-  - Diseño: 
-      - Excalidraw: excalidraw.md  
-      - Principal: paginaPrincipal.md  
+  - Index: 
+      - Resumen: indexFilme.md  
       - Detalles: paginaDetalles.md
   - Buscadores: 
       - Ajax: buscadorAjax.md
       - BuscadorPeli: buscadorPeli.md
-      - ApiYoutube: apiYoutube.md
+      - ApiYouTube: apiYoutube.md
   - Módulo: 
       - Imports&Exports: modulos.md
       - Gestión de Constantes y URLs de API: gestion_constantes_urls.md

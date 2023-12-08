@@ -1,4 +1,4 @@
-# 🎨 Excalidraw
+# Excalidraw
 
 ## ¿Qué es Excalidraw?
 
@@ -21,10 +21,8 @@ Este primer diseño es una herramienta valiosa para la planificación y la comun
 Además, este diseño inicial puede evolucionar a medida que nuestro proyecto avanza. Podemos iterar sobre él, haciendo ajustes y refinamientos basados en los comentarios, las pruebas de usuario, o los cambios en los requisitos del proyecto.
 
 
+## Nuestro Excalidraw inicial
 
-## Las diferentes páginas de Film-e
+A continuación, mostraremos el diseño inicial que hemos creado para nuestro proyecto. Algunas de las ideas no se han podido realizar debido a falta de tiempo y otras muchas que hemos agregado no formaban parte del diseño inicial.
 
-- [**Página Principal**](paginaPrincipal.md)
-- [**Detalle Película**](paginaDetalles.md)
-- [**Login**](login.md)
-- [**Perfil**](perfil.md)
+![Diseño inicial Excalidraw](images/excalidraw.png)
