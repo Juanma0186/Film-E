@@ -141,6 +141,16 @@ btnBackToTop.addEventListener("click", function () {
 });
 ```
 
+Deberemos importar y llamar a la función cada vez que el usuario haga scroll en la página, para ello, utilizaremos el siguiente código:
+
+```javascript title="index.js"
+import { toTop } from "./toTop";
+
+window.onscroll = function () {
+  toTop();
+};
+```
+
 ## Utilidades
 
 Hemos creado un archivo `utilidades.js` que contiene funciones que se utilizan en varias partes de la web y que son útiles para convertir fecha, redondear números, etc.

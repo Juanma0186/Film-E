@@ -17,3 +17,11 @@ function fetchMoviesCinema() {
 ```
 
 Mediante la función `printMovies` se obtiene la información de las películas en cartelera y se imprimen en el DOM en forma de tarjetas con su título, fecha de estreno y valoración correspondiente.
+
+También deberemos llamar a la función cuando se cargue la página, para ello, utilizaremos el siguiente código:
+
+```javascript title="index.js"
+window.onload = function () {
+  fetchMoviesCinema();
+};
+```

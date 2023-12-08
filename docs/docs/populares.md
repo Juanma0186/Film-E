@@ -17,3 +17,11 @@ function fetchPopularMovies() {
 ```
 
 Al igual que en la sección de películas en cines, se utiliza la función `printMovies` para imprimir las películas en el DOM con el mismo formato.
+
+También deberemos llamar a la función cuando se cargue la página, para ello, utilizaremos el siguiente código:
+
+```javascript title="index.js"
+window.onload = function () {
+  fetchPopularMovies();
+};
+```
