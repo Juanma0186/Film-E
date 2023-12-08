@@ -114,7 +114,7 @@ La API nos devolverá un JSON con los datos de las series donde aparece el actor
 
 ## ¿Como las mostramos?
 
-Para mostrar las películas relacionadas con el actor/actriz, utilizaremos la misma estructura que en la sección de [Películas](pelis.md), pero en este caso, en vez de mostrar las películas más populares, mostraremos las películas que nos devuelve la llamada que hemos hecho anteriormente.
+Para mostrar las series relacionadas con el actor/actriz, utilizaremos la misma estructura que en la sección de películas populares en el [index](populares.md), pero en este caso, en vez de mostrar las películas más populares, mostraremos las series que nos devuelve la llamada que hemos hecho anteriormente.
 
 ```js title="mainDetalleActor.js"
 import { ACTOR_API_URL, ACTOR_MOVIE_CREDITS_API_URL, ACTOR_TV_CREDITS_API_URL } from "./config.js";
