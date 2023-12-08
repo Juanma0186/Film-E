@@ -6,9 +6,9 @@ A continuación, se describe cada una de las secciones del index de Film-E con s
 
 ## Barra de navegación (Navbar)
 
-En la cima, la barra de navegación presenta el logo de Film-E y enlaces directos a las diversas páginas del sitio web, junto con el botón de cambio a [modo oscuro](modoOscuro.md).
+En la cima, la barra de navegación presenta el logo de Film-E y enlaces directos a las diversas páginas del sitio web, junto con el botón de cambio a [modo oscuro](funciones.md#modo-oscuro).
 
-[![Barra de navegación](images/navbar.png)](/comunes/#navbar)
+[![Barra de navegación](images/navbar.png)](comunes.md#navbar)
 
 ## Buscador de películas y series
 
@@ -42,4 +42,4 @@ Más abajo, la sección de películas populares destaca una cuidadosa selección
 
 Finalizando la página, el pie de página presenta nuevamente el logo de Film-E y enlaces a información adicional, como "About Us", términos de servicio, política de privacidad y recursos utilizados.
 
-[![Pie de página](images/footer.png)](/comunes/#footer)
+[![Pie de página](images/footer.png)](comunes.md#footer)

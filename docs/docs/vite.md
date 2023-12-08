@@ -32,7 +32,7 @@ npm run dev
 
 La estructura de Vite es muy sencilla, ya que solo tenemos que preocuparnos de la carpeta `src`, donde se encuentra todo nuestro código.
 
-Como mucho deberemos modificar el archivo `tailwind.config.js` que explicaremos en su apartado correspondiente ([Tailwind](/docs/tailwind.md)).
+Como mucho deberemos modificar el archivo `tailwind.config.js` que explicaremos en su apartado correspondiente ([Tailwind](tailwind.md)).
 
 ```bash title="Estructura del proyecto"
 ├── node_modules
